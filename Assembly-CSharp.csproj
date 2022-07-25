@@ -53,6 +53,7 @@
      <Compile Include="Assets\Encoder\WaveFormatExtensible.cs" />
      <Compile Include="Assets\Encoder\Naudio_Utils\ByteEncoding.cs" />
      <Compile Include="Assets\Encoder\Naudio_Utils\HResult.cs" />
+     <Compile Include="Assets\Scripts\PlayerControls.cs" />
      <Compile Include="Assets\Encoder\WaveFormatEncoding.cs" />
      <Compile Include="Assets\Encoder\RawSourceWaveStream.cs" />
      <Compile Include="Assets\Encoder\Naudio_Utils\Decibels.cs" />
@@ -60,7 +61,6 @@
      <Compile Include="Assets\Encoder\MP3FileWriter.cs" />
      <Compile Include="Assets\Encoder\EncodeMP3.cs" />
      <Compile Include="Assets\Encoder\IWaveProvider.cs" />
-     <Compile Include="Assets\Scripts\PlayerControls.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

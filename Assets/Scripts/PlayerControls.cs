@@ -33,7 +33,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""id"": ""8c7756c2-8093-4c49-ad4f-f986c7fbcc2e"",
                     ""expectedControlType"": ""Dpad"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold"",
                     ""initialStateCheck"": true
                 }
             ],
@@ -42,7 +42,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""f16c29e1-c3a3-411a-93f8-5d42062b2383"",
                     ""path"": ""<Gamepad>/dpad"",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Move"",
