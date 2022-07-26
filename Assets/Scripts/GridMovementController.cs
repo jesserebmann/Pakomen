@@ -9,15 +9,28 @@ using Vector3 = UnityEngine.Vector3;
 
 public class GridMovementController : MonoBehaviour
 {
+    private enum Directions
+    {
+        Up,
+        Down,
+        Left,
+        Right
+    }
     private bool _isMoving;
     private Vector3 _origPos, _targetPos;
     private float _timeToMove = 0.2f;
     public float gridSize;
     public float blockRadius = 0.01f;
     public LayerMask movementBlock;
-    public Collider2D[] colliders;
+    public Collider2D colliderUp;
+    public Collider2D colliderRight;
+    public Collider2D colliderDown;
+    public Collider2D colliderLeft;
     public Vector2 yourPosition;
     private Transform _begintransform;
+    
+    //States
+    private Directions _directionFacing;
 
     private void Start()
     {
@@ -29,21 +42,25 @@ public class GridMovementController : MonoBehaviour
         if (_isMoving) return;
         if (Gamepad.current.dpad.right.isPressed)
         {
+            if (CheckMovementBlock(colliderRight)) return;
             MovementButtonPressed("Right");
             return;
         }
         if (Gamepad.current.dpad.left.isPressed)
         {
+            if (CheckMovementBlock(colliderLeft)) return;
             MovementButtonPressed("Left");
             return;
         }
         if (Gamepad.current.dpad.down.isPressed)
         {
+            if (CheckMovementBlock(colliderDown)) return;
             MovementButtonPressed("Down");
             return;
         }
         if (Gamepad.current.dpad.up.isPressed)
         {
+            if (CheckMovementBlock(colliderUp)) return;
             MovementButtonPressed("Up");
             return;
         }
@@ -96,8 +113,8 @@ public class GridMovementController : MonoBehaviour
     }
     
     
-    private void CheckPositionInsideCollider()
+    private bool CheckMovementBlock(Collider2D collider)
     {
-        colliders = Physics2D.OverlapCircleAll(yourPosition, 0.0f);
+        return collider.IsTouchingLayers(LayerMask.GetMask("MovementBlock"));
     }
 }
