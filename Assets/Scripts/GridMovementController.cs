@@ -22,10 +22,6 @@ public class GridMovementController : MonoBehaviour
     public float gridSize;
     public float blockRadius = 0.01f;
     public LayerMask movementBlock;
-    public Collider2D colliderUp;
-    public Collider2D colliderRight;
-    public Collider2D colliderDown;
-    public Collider2D colliderLeft;
     public Vector2 yourPosition;
     private Transform _begintransform;
     
@@ -42,25 +38,25 @@ public class GridMovementController : MonoBehaviour
         if (_isMoving) return;
         if (Gamepad.current.dpad.right.isPressed)
         {
-            if (CheckMovementBlock(colliderRight)) return;
+            if (CheckMovementBlock(transform.position)) return;
             MovementButtonPressed("Right");
             return;
         }
         if (Gamepad.current.dpad.left.isPressed)
         {
-            if (CheckMovementBlock(colliderLeft)) return;
+            if (CheckMovementBlock(transform.position)) return;
             MovementButtonPressed("Left");
             return;
         }
         if (Gamepad.current.dpad.down.isPressed)
         {
-            if (CheckMovementBlock(colliderDown)) return;
+            if (CheckMovementBlock(transform.position)) return;
             MovementButtonPressed("Down");
             return;
         }
         if (Gamepad.current.dpad.up.isPressed)
         {
-            if (CheckMovementBlock(colliderUp)) return;
+            if (CheckMovementBlock(transform.position)) return;
             MovementButtonPressed("Up");
             return;
         }
@@ -93,14 +89,8 @@ public class GridMovementController : MonoBehaviour
         float elapsedTime = 0;
         _origPos = transform.position;
         _targetPos = _origPos + (direction*gridSize);
-        RaycastHit2D hit = Physics2D.Raycast(_origPos, direction, gridSize);
-        if (hit.collider != null)
-        {
-            //if raycast hits something at rand_pos, not empty
-            yield return null;
-        }
 
-            while (elapsedTime < _timeToMove)
+        while (elapsedTime < _timeToMove)
             {
                 transform.position = Vector3.Lerp(_origPos, _targetPos, (elapsedTime / _timeToMove));
                 elapsedTime += Time.deltaTime;
@@ -113,8 +103,8 @@ public class GridMovementController : MonoBehaviour
     }
     
     
-    private bool CheckMovementBlock(Collider2D collider)
+    private bool CheckMovementBlock(Vector3 targetPos)
     {
-        return collider.IsTouchingLayers(LayerMask.GetMask("MovementBlock"));
+        return Physics2D.OverlapCircle(targetPos, 1f, movementBlock);
     }
 }
