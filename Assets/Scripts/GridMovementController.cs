@@ -33,6 +33,8 @@ public class GridMovementController : MonoBehaviour
     public Vector2 yourPosition;
     private Transform _begintransform;
     private UnityEngine.InputSystem.PlayerInput _playerInput;
+    public Animator playerAnimator;
+    private bool _inputActive;
     
     //States
     private Directions _directionFacing;
@@ -46,18 +48,29 @@ public class GridMovementController : MonoBehaviour
     {
         if (_isMoving) return;
         var input = _playerInput.actions["Move"].ReadValue<Vector2>();
-        if (input == Vector2.zero) return;
+        if (input == Vector2.zero)
+        {
+            _inputActive = false;
+            playerAnimator.SetBool("IsMoving",false);
+            return;
+        }
+
+        _inputActive = true;
         var axis = Math.Abs(input.x) > Math.Abs(input.y) ? Axis.Horizontal : Axis.Vertical;
         if (axis == Axis.Horizontal)
         {
             if (input.x > 0)
             {
-                //if (CheckMovementBlock(transform.position)) return;
+                if (CheckMovementBlock(new Vector2(transform.position.x+gridSize,transform.position.y))) return;
+                playerAnimator.SetFloat("MoveX",1);
+                playerAnimator.SetFloat("MoveY",0);
                 MovementButtonPressed(Directions.Right);
             }
             else
             {
-                //if (CheckMovementBlock(transform.position)) return;
+                if (CheckMovementBlock(new Vector2(transform.position.x-gridSize,transform.position.y))) return;
+                playerAnimator.SetFloat("MoveX",-1);
+                playerAnimator.SetFloat("MoveY",0);
                 MovementButtonPressed(Directions.Left);
             }
         }
@@ -65,12 +78,16 @@ public class GridMovementController : MonoBehaviour
         {
             if (input.y > 0)
             {
-                //if (CheckMovementBlock(transform.position)) return;
+                if (CheckMovementBlock(new Vector2(transform.position.x,transform.position.y+gridSize))) return;
+                playerAnimator.SetFloat("MoveX",0);
+                playerAnimator.SetFloat("MoveY",1);
                 MovementButtonPressed(Directions.Up);
             }
             else
             {
-                //if (CheckMovementBlock(transform.position)) return;
+                if (CheckMovementBlock(new Vector2(transform.position.x,transform.position.y-gridSize))) return;
+                playerAnimator.SetFloat("MoveX",0);
+                playerAnimator.SetFloat("MoveY",-1);
                 MovementButtonPressed(Directions.Down);
             }
         }
@@ -125,6 +142,7 @@ public class GridMovementController : MonoBehaviour
     private IEnumerator MovePlayer(Vector3 direction)
     {
         _isMoving = true;
+        playerAnimator.SetBool("IsMoving",true);
         _begintransform = transform;
         float elapsedTime = 0;
         _origPos = transform.position;
@@ -143,8 +161,8 @@ public class GridMovementController : MonoBehaviour
     }
     
     
-    private bool CheckMovementBlock(Vector3 targetPos)
+    private bool CheckMovementBlock(Vector2 targetPos)
     {
-        return Physics2D.OverlapCircle(targetPos, 1f, movementBlock);
+        return Physics2D.OverlapCircle(targetPos, blockRadius, movementBlock);
     }
 }
