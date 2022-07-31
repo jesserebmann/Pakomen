@@ -57,7 +57,7 @@ public class GridMovementController : MonoBehaviour
             }
             else
             {
-                if (CheckMovementBlock(transform.position)) return;
+                //if (CheckMovementBlock(transform.position)) return;
                 MovementButtonPressed(Directions.Left);
             }
         }
