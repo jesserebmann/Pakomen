@@ -61,6 +61,7 @@
      <Compile Include="Assets\Encoder\MP3FileWriter.cs" />
      <Compile Include="Assets\Encoder\EncodeMP3.cs" />
      <Compile Include="Assets\Encoder\IWaveProvider.cs" />
+     <Compile Include="Assets\Scripts\PlayerInput.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -752,9 +753,6 @@
      <Reference Include="UnityEditor.UI">
      <HintPath>D:\UnityProjects\Pakomen\Pakomen\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.InputSystem">
-     <HintPath>D:\UnityProjects\Pakomen\Pakomen\Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.Rider.Editor">
      <HintPath>D:\UnityProjects\Pakomen\Pakomen\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
      </Reference>
@@ -874,6 +872,9 @@
      </Reference>
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>D:\UnityProjects\Pakomen\Pakomen\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.InputSystem">
+     <HintPath>D:\UnityProjects\Pakomen\Pakomen\Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>

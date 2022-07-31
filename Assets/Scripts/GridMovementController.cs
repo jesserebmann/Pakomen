@@ -1,21 +1,29 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Numerics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Debug = UnityEngine.Debug;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 
 public class GridMovementController : MonoBehaviour
 {
-    private enum Directions
+    public enum Directions
     {
         Up,
         Down,
         Left,
         Right
     }
+    public enum Axis
+    {
+        Horizontal,
+        Vertical
+    }
+    
     private bool _isMoving;
     private Vector3 _origPos, _targetPos;
     private float _timeToMove = 0.2f;
@@ -24,18 +32,50 @@ public class GridMovementController : MonoBehaviour
     public LayerMask movementBlock;
     public Vector2 yourPosition;
     private Transform _begintransform;
+    private UnityEngine.InputSystem.PlayerInput _playerInput;
     
     //States
     private Directions _directionFacing;
 
-    private void Start()
+    private void Awake()
     {
-        
+        _playerInput = GetComponent<UnityEngine.InputSystem.PlayerInput>();
     }
 
     private void FixedUpdate()
     {
         if (_isMoving) return;
+        var input = _playerInput.actions["Move"].ReadValue<Vector2>();
+        if (input == Vector2.zero) return;
+        var axis = Math.Abs(input.x) > Math.Abs(input.y) ? Axis.Horizontal : Axis.Vertical;
+        if (axis == Axis.Horizontal)
+        {
+            if (input.x > 0)
+            {
+                //if (CheckMovementBlock(transform.position)) return;
+                MovementButtonPressed(Directions.Right);
+            }
+            else
+            {
+                if (CheckMovementBlock(transform.position)) return;
+                MovementButtonPressed(Directions.Left);
+            }
+        }
+        else
+        {
+            if (input.y > 0)
+            {
+                //if (CheckMovementBlock(transform.position)) return;
+                MovementButtonPressed(Directions.Up);
+            }
+            else
+            {
+                //if (CheckMovementBlock(transform.position)) return;
+                MovementButtonPressed(Directions.Down);
+            }
+        }
+
+        /*if (_isMoving) return;
         if (Gamepad.current.dpad.right.isPressed)
         {
             if (CheckMovementBlock(transform.position)) return;
@@ -59,23 +99,23 @@ public class GridMovementController : MonoBehaviour
             if (CheckMovementBlock(transform.position)) return;
             MovementButtonPressed("Up");
             return;
-        }
+        }*/
     }
 
-    public void MovementButtonPressed(string direction)
+    public void MovementButtonPressed(Directions direction)
     {
         switch (direction)
         {
-            case "Up":
+            case Directions.Up:
                 StartCoroutine(MovePlayer(Vector3.up));
                 break;
-            case "Down":
+            case Directions.Down:
                 StartCoroutine(MovePlayer(Vector3.down));
                 break;
-            case "Left":
+            case Directions.Left:
                 StartCoroutine(MovePlayer(Vector3.left));
                 break;
-            case "Right":
+            case Directions.Right:
                 StartCoroutine(MovePlayer(Vector3.right));
                 break;
             
