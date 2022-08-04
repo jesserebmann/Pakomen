@@ -6,6 +6,7 @@ using System.Numerics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Debug = UnityEngine.Debug;
+using Random = System.Random;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 
@@ -30,11 +31,15 @@ public class GridMovementController : MonoBehaviour
     public float gridSize;
     public float blockRadius = 0.01f;
     public LayerMask movementBlock;
+    public LayerMask encounterLayer;
     public Vector2 yourPosition;
     private Transform _begintransform;
     private UnityEngine.InputSystem.PlayerInput _playerInput;
     public Animator playerAnimator;
+    public UIController _UIController;
+
     private bool _inputActive;
+    private Random _random = new Random();
     
     //States
     private Directions _directionFacing;
@@ -56,21 +61,22 @@ public class GridMovementController : MonoBehaviour
         }
 
         _inputActive = true;
+        playerAnimator.SetBool("IsMoving",true);
         var axis = Math.Abs(input.x) > Math.Abs(input.y) ? Axis.Horizontal : Axis.Vertical;
         if (axis == Axis.Horizontal)
         {
             if (input.x > 0)
             {
-                if (CheckMovementBlock(new Vector2(transform.position.x+gridSize,transform.position.y))) return;
                 playerAnimator.SetFloat("MoveX",1);
                 playerAnimator.SetFloat("MoveY",0);
+                if (CheckMovementBlock(new Vector2(transform.position.x+gridSize,transform.position.y))) return;
                 MovementButtonPressed(Directions.Right);
             }
             else
             {
-                if (CheckMovementBlock(new Vector2(transform.position.x-gridSize,transform.position.y))) return;
                 playerAnimator.SetFloat("MoveX",-1);
                 playerAnimator.SetFloat("MoveY",0);
+                if (CheckMovementBlock(new Vector2(transform.position.x-gridSize,transform.position.y))) return;
                 MovementButtonPressed(Directions.Left);
             }
         }
@@ -78,16 +84,16 @@ public class GridMovementController : MonoBehaviour
         {
             if (input.y > 0)
             {
-                if (CheckMovementBlock(new Vector2(transform.position.x,transform.position.y+gridSize))) return;
                 playerAnimator.SetFloat("MoveX",0);
                 playerAnimator.SetFloat("MoveY",1);
+                if (CheckMovementBlock(new Vector2(transform.position.x,transform.position.y+gridSize))) return;
                 MovementButtonPressed(Directions.Up);
             }
             else
             {
-                if (CheckMovementBlock(new Vector2(transform.position.x,transform.position.y-gridSize))) return;
                 playerAnimator.SetFloat("MoveX",0);
                 playerAnimator.SetFloat("MoveY",-1);
+                if (CheckMovementBlock(new Vector2(transform.position.x,transform.position.y-gridSize))) return;
                 MovementButtonPressed(Directions.Down);
             }
         }
@@ -142,7 +148,7 @@ public class GridMovementController : MonoBehaviour
     private IEnumerator MovePlayer(Vector3 direction)
     {
         _isMoving = true;
-        playerAnimator.SetBool("IsMoving",true);
+        
         _begintransform = transform;
         float elapsedTime = 0;
         _origPos = transform.position;
@@ -157,10 +163,22 @@ public class GridMovementController : MonoBehaviour
             }
             transform.position = _targetPos;
             _isMoving = false;
+            CheckForEncounters();
             yield return null;
     }
-    
-    
+
+    private void CheckForEncounters()
+    {
+        
+        if (Physics2D.OverlapCircle(transform.position, blockRadius, encounterLayer) != null)
+        {
+            int number = _random.Next(0, 100); 
+           if(number <= 10)
+               _UIController.StartEncounter();
+        }
+    }
+
+
     private bool CheckMovementBlock(Vector2 targetPos)
     {
         return Physics2D.OverlapCircle(targetPos, blockRadius, movementBlock);
