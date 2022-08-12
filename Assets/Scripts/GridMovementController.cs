@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Numerics;
+using Pakomen;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Debug = UnityEngine.Debug;
@@ -37,6 +38,7 @@ public class GridMovementController : MonoBehaviour
     private UnityEngine.InputSystem.PlayerInput _playerInput;
     public Animator playerAnimator;
     public UIController _UIController;
+    
 
     private bool _inputActive;
     private Random _random = new Random();
@@ -169,12 +171,20 @@ public class GridMovementController : MonoBehaviour
 
     private void CheckForEncounters()
     {
-        
-        if (Physics2D.OverlapCircle(transform.position, blockRadius, encounterLayer) != null)
+        var colliders = Physics2D.OverlapCircleAll(transform.position, blockRadius, encounterLayer);
+        if (colliders.Length > 0)
         {
-            int number = _random.Next(0, 100); 
-           if(number <= 10)
-               _UIController.StartEncounter();
+            
+            int number = _random.Next(0, 10);
+            if (number <= 10)
+            {
+                Debug.Log("Encounter");
+                var region = colliders[0].gameObject.GetComponentInParent<WildRegion>();
+                var pokemonEncounter = region.GetPokemonEncounter();
+                var isShiny = _random.Next(0, 64) == 1;
+                Debug.Log(pokemonEncounter.name);
+                _UIController.StartEncounter(pokemonEncounter,isShiny);
+            }
         }
     }
 

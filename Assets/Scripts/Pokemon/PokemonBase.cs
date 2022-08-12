@@ -2,15 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace Pakomen
+{
+    
+
 [CreateAssetMenu(fileName = "Pokemon", menuName = "Pokemon/Create new pokemon")]
 public class PokemonBase : ScriptableObject
 {
-    [SerializeField] private string name;
+    [SerializeField] private string _name;
 
     [TextArea] 
     [SerializeField] private string _description;
     [SerializeField] private Sprite _sprite;
     [SerializeField] private Sprite _shinySprite;
+    [SerializeField] private int _pokenumber1;
+    [SerializeField] private int _pokenumber2;
+    [SerializeField] private float _SpriteOffset;
     
     [SerializeField] private PokemonType _type1;
     [SerializeField] private PokemonType _type2;
@@ -46,4 +53,10 @@ public class PokemonBase : ScriptableObject
         Derp,
         Odd
     }
+
+    public string PokemonName => _name;
+    public Sprite DefaultSprite => _sprite;
+    public Sprite ShinySprite => _shinySprite;
+    public float SpriteOffset => _SpriteOffset;
+}
 }

@@ -48,6 +48,7 @@
      <Compile Include="Assets\Scripts\Pokemon\PokemonBase.cs" />
      <Compile Include="Assets\Encoder\Naudio_Utils\MarshalHelpers.cs" />
      <Compile Include="Assets\Encoder\LibMp3Lame.cs" />
+     <Compile Include="Assets\BattleTransitions\SimpleBlit.cs" />
      <Compile Include="Assets\ExampleConvert.cs" />
      <Compile Include="Assets\Scripts\SoundExtracter.cs" />
      <Compile Include="Assets\Scripts\GridMovementController.cs" />
@@ -55,6 +56,7 @@
      <Compile Include="Assets\Encoder\WaveFormatExtensible.cs" />
      <Compile Include="Assets\Encoder\Naudio_Utils\ByteEncoding.cs" />
      <Compile Include="Assets\Encoder\Naudio_Utils\HResult.cs" />
+     <Compile Include="Assets\Scripts\Wild\WildBase.cs" />
      <Compile Include="Assets\Scripts\PlayerControls.cs" />
      <Compile Include="Assets\Encoder\WaveFormatEncoding.cs" />
      <Compile Include="Assets\Encoder\RawSourceWaveStream.cs" />
@@ -64,6 +66,7 @@
      <Compile Include="Assets\Encoder\EncodeMP3.cs" />
      <Compile Include="Assets\Scripts\UIController.cs" />
      <Compile Include="Assets\Encoder\IWaveProvider.cs" />
+     <Compile Include="Assets\Scripts\Wild\WildRegion.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -78,6 +81,7 @@
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+     <None Include="Assets\BattleTransitions\BattleTransitions.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
