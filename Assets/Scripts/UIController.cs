@@ -25,12 +25,9 @@ public class UIController : MonoBehaviour
     {
         _pokemonName.text = pokemon.PokemonName;
         _pokemon.sprite = (isShiny) ? pokemon.ShinySprite : pokemon.DefaultSprite;
-        //_pokemon.gameObject.transform.SetPositionAndRotation(new Vector3(_pokemon.gameObject.transform.position.x,pokemon.SpriteOffset,0),quaternion.identity);
-        //_pokemon.rectTransform.SetPositionAndRotation(new Vector3(_pokemon.rectTransform.anchoredPosition.x,pokemon.SpriteOffset,0),quaternion.identity);
+        _pokemon.rectTransform.localPosition = new Vector3(_pokemon.rectTransform.localPosition.x, pokemon.SpriteOffset, _pokemon.rectTransform.localPosition.z);
+        _pokemon.rectTransform.ForceUpdateRectTransforms();
         //FadeScreen(true);
-        //RectTransform rt = _pokemon.GetComponent<RectTransform>();
-        //_pokemon.rec.anchoredPosition += offset;
-
         _mainCamera.gameObject.SetActive(false);
         _battleCamera.gameObject.SetActive(true);
         _battleUI.SetActive(true);
