@@ -45,8 +45,11 @@
      <Compile Include="Assets\Encoder\WaveFormat.cs" />
      <Compile Include="Assets\Encoder\CopyTo.cs" />
      <Compile Include="Assets\Scripts\SavWav.cs" />
+     <Compile Include="Assets\Scripts\BattleController.cs" />
      <Compile Include="Assets\Scripts\Pokemon\PokemonBase.cs" />
      <Compile Include="Assets\Encoder\Naudio_Utils\MarshalHelpers.cs" />
+     <Compile Include="Assets\Scripts\Pokedex\PokedexPokemonBlueprint.cs" />
+     <Compile Include="Assets\Scripts\Pokedex\PokedexController.cs" />
      <Compile Include="Assets\Encoder\LibMp3Lame.cs" />
      <Compile Include="Assets\BattleTransitions\SimpleBlit.cs" />
      <Compile Include="Assets\ExampleConvert.cs" />

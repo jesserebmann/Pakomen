@@ -12,48 +12,132 @@ public class UIController : MonoBehaviour
     [SerializeField] private Camera _mainCamera;
     [SerializeField] private Camera _battleCamera;
     [SerializeField] private GameObject _battleUI;
+    [SerializeField] private GameObject _pokedexUI;
+    [SerializeField] private GameObject _pokedexUIBase;
+    [SerializeField] private GameObject _pokedexUIShiny;
     [SerializeField] private Image _screenTransition;
     [SerializeField] private Image _pokemon;
-    [SerializeField] private Rect _pokemonRect;
+    [SerializeField] private Material _transition;
     [SerializeField] private TextMeshProUGUI _pokemonName;
-
+    [SerializeField] private Animator _shiny;
+    [SerializeField] private Button _catchButton;
+    [SerializeField] private Button _runButton;
     private bool _isTransitioning;
-    private float _transitionTime;
+    private float _transitionTime = 1f;
+    private float _pokeloadTime = 1.5f;
     private float _currentFadeValue = 0f;
-    private float _targetFadeValue = 1f;
+    private float _targetFadeValue = 0.8f;
+
+    private bool _inEncounter;
+    private bool _isShinyEncounter;
+    public static UIController Instance;
+
+    public void Start()
+    {
+        Instance = this;
+        _transition.SetFloat("_Transition",0 );
+    }
+
+
+
     public void StartEncounter(PokemonBase pokemon,bool isShiny)
     {
+        SetBattleButtons(false);
+        _isShinyEncounter = isShiny;
+        _inEncounter = true;
         _pokemonName.text = pokemon.PokemonName;
         _pokemon.sprite = (isShiny) ? pokemon.ShinySprite : pokemon.DefaultSprite;
         _pokemon.rectTransform.localPosition = new Vector3(_pokemon.rectTransform.localPosition.x, pokemon.SpriteOffset, _pokemon.rectTransform.localPosition.z);
         _pokemon.rectTransform.ForceUpdateRectTransforms();
-        //FadeScreen(true);
-        _mainCamera.gameObject.SetActive(false);
-        _battleCamera.gameObject.SetActive(true);
-        _battleUI.SetActive(true);
+        StartCoroutine(FadeScreenIn());
     }
 
     public void StopEncounter()
     {
+        _transition.SetFloat("_Transition",0f );
         _mainCamera.gameObject.SetActive(true);
         _battleCamera.gameObject.SetActive(false);
         _battleUI.SetActive(false);
+        _inEncounter = false;
     }
 
-    public IEnumerator FadeScreen(bool isFadeIn)
+    public void CatchPokemon()
     {
-        if (_isTransitioning) yield return null;
-        
+        SetBattleButtons(false);
+        //play throw ball animation
+        PokedexController.Instance.CatchPokemon(_pokemonName.text,_isShinyEncounter);
+        //Gotcha!
+        //End encounter
+        StopEncounter();
+    }
+
+    public IEnumerator FadeScreenIn()
+    {
+        //if (_isTransitioning) yield return null;
+        _currentFadeValue = 0f;
         _isTransitioning = true;
         float elapsedTime = 0;
-        _currentFadeValue = Mathf.Lerp(_currentFadeValue, _targetFadeValue, Time.deltaTime);
         while (elapsedTime < _transitionTime)
         {
-            _screenTransition.material.SetFloat("Transition",_currentFadeValue);
+            _currentFadeValue = Mathf.Lerp(_currentFadeValue, _targetFadeValue, Time.deltaTime);
+            _transition.SetFloat("_Transition",_currentFadeValue );
             elapsedTime += Time.deltaTime;
             yield return null;
         }
         _isTransitioning = false;
         yield return null;
+        _mainCamera.gameObject.SetActive(false);
+        _battleCamera.gameObject.SetActive(true);
+        _battleUI.SetActive(true);
+        SetBattleButtons(true);
+        StartCoroutine(FadeScreenOut());
     }
+    
+    public IEnumerator FadeScreenOut()
+    {
+        if (_isShinyEncounter) 
+            PlayShiny();
+        _currentFadeValue = 0f;
+        float elapsedTime = 0;
+        while (elapsedTime < _pokeloadTime)
+        {
+            _currentFadeValue = Mathf.Lerp(_currentFadeValue, _targetFadeValue, Time.deltaTime);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        SetBattleButtons(true);
+        yield return null;
+    }
+
+    public void OpenPokedex()
+    {
+        _pokedexUI.SetActive(true);
+        _pokedexUIBase.SetActive(true);
+        _pokedexUIShiny.SetActive(false);
+    }
+    
+    public void OpenPokedexShiny()
+    {
+        _pokedexUIBase.SetActive(false);
+        _pokedexUIShiny.SetActive(true);
+    }
+    public void ClosePokedex()
+    {
+        _pokedexUI.SetActive(false);
+        _pokedexUIBase.SetActive(false);
+        _pokedexUIShiny.SetActive(false);
+    }
+
+    public void SetBattleButtons(bool isActive)
+    {
+        _runButton.interactable = isActive;
+        _catchButton.interactable = isActive;
+    }
+
+    public void PlayShiny()
+    {
+        _shiny.SetTrigger("PlayShiny");
+    }
+
+    public bool InEncounter => _inEncounter;
 }

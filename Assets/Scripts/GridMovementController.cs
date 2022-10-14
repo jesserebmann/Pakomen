@@ -53,7 +53,7 @@ public class GridMovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_isMoving) return;
+        if (_isMoving || _UIController.InEncounter) return;
         var input = _playerInput.actions["Move"].ReadValue<Vector2>();
         if (input == Vector2.zero)
         {
@@ -176,12 +176,13 @@ public class GridMovementController : MonoBehaviour
         {
             
             int number = _random.Next(0, 10);
-            if (number <= 10)
+            if (number <= 1)
             {
+                playerAnimator.SetBool("IsMoving",false);
                 Debug.Log("Encounter");
                 var region = colliders[0].gameObject.GetComponentInParent<WildRegion>();
                 var pokemonEncounter = region.GetPokemonEncounter();
-                var isShiny = _random.Next(0, 64) == 1;
+                var isShiny = _random.Next(0, 2) == 1;
                 Debug.Log(pokemonEncounter.name);
                 _UIController.StartEncounter(pokemonEncounter,isShiny);
             }
