@@ -120,5 +120,14 @@ public class PokedexController : MonoBehaviour
         }
     }
 
+    public void OpenPokemonDetailsUI(string pokemonName)
+    {
+        var data = PlayerPrefs.GetString($"{pokemonName}");
+        var pokemonData = JsonUtility.FromJson<pokedexPokemon>(data);
+        UIController.Instance.TogglePokemonInfoUI(true);
+    }
+
+
+
     public static PokedexController Instance  { get; private set; }
 }

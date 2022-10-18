@@ -182,7 +182,7 @@ public class GridMovementController : MonoBehaviour
                 Debug.Log("Encounter");
                 var region = colliders[0].gameObject.GetComponentInParent<WildRegion>();
                 var pokemonEncounter = region.GetPokemonEncounter();
-                var isShiny = _random.Next(0, 2) == 1;
+                var isShiny = _random.Next(0, 100) == 1;
                 Debug.Log(pokemonEncounter.name);
                 _UIController.StartEncounter(pokemonEncounter,isShiny);
             }

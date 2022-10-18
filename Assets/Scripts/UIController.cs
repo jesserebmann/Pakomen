@@ -13,6 +13,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private Camera _battleCamera;
     [SerializeField] private GameObject _battleUI;
     [SerializeField] private GameObject _pokedexUI;
+    [SerializeField] private GameObject _pokemonInfoUI;
     [SerializeField] private GameObject _pokedexUIBase;
     [SerializeField] private GameObject _pokedexUIShiny;
     [SerializeField] private Image _screenTransition;
@@ -137,6 +138,12 @@ public class UIController : MonoBehaviour
     public void PlayShiny()
     {
         _shiny.SetTrigger("PlayShiny");
+    }
+
+    public void TogglePokemonInfoUI(bool isOpen)
+    {
+        _pokemonInfoUI.SetActive(isOpen);
+        _pokedexUI.SetActive(!isOpen);
     }
 
     public bool InEncounter => _inEncounter;
