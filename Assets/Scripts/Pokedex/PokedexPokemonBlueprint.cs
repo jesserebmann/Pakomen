@@ -12,7 +12,7 @@ public class PokedexPokemonBlueprint : MonoBehaviour
 
     public void OpenPokemonDetails()
     {
-        PokedexController.Instance.OpenPokemonDetailsUI(_pokemonName.text);
+        UIController.Instance.TogglePokemonInfoUI(true,_pokemonName.text);
     }
 
     public Image PokemonImage => _pokemonImage;

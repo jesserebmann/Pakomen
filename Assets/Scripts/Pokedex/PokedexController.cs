@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Pakomen;
@@ -61,12 +59,13 @@ public class PokedexController : MonoBehaviour
     {
         var data = PlayerPrefs.GetString($"{pokemonName}");
         var pokemonData = JsonUtility.FromJson<pokedexPokemon>(data);
+        var pokemonId = pokemonData.pokemonID.ToString().PadLeft(3, '0') + $"_{pokemonData.pokemonName}";
         if (isShiny)
         {
             pokemonData.isCaughtShiny = true;
             if (shinyPokemonList.Keys.Contains(pokemonData.pokemonName))
             {
-                shinyPokemonList[pokemonData.pokemonName].PokemonName.SetText(pokemonData.pokemonName);
+                shinyPokemonList[pokemonData.pokemonName].PokemonName.SetText(pokemonId);
                 shinyPokemonList[pokemonData.pokemonName].PokemonImage.color = Color.white;
             }
         }
@@ -75,7 +74,7 @@ public class PokedexController : MonoBehaviour
             pokemonData.isCaught = true;
             if (basePokemonList.Keys.Contains(pokemonData.pokemonName))
             {
-                basePokemonList[pokemonData.pokemonName].PokemonName.SetText(pokemonData.pokemonName);
+                basePokemonList[pokemonData.pokemonName].PokemonName.SetText(pokemonId);
                 basePokemonList[pokemonData.pokemonName].PokemonImage.color = Color.white;
             }
 
@@ -119,15 +118,6 @@ public class PokedexController : MonoBehaviour
             }
         }
     }
-
-    public void OpenPokemonDetailsUI(string pokemonName)
-    {
-        var data = PlayerPrefs.GetString($"{pokemonName}");
-        var pokemonData = JsonUtility.FromJson<pokedexPokemon>(data);
-        UIController.Instance.TogglePokemonInfoUI(true);
-    }
-
-
 
     public static PokedexController Instance  { get; private set; }
 }

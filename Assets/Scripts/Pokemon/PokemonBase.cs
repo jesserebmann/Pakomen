@@ -58,5 +58,11 @@ public class PokemonBase : ScriptableObject
     public Sprite DefaultSprite => _sprite;
     public Sprite ShinySprite => _shinySprite;
     public float SpriteOffset => _SpriteOffset;
+    public string Description => _description;
+    public PokemonType Type1 => _type1;
+    public PokemonType Type2 => _type2;
+    public int PokeNumber1 => _pokenumber1;
+    public int PokeNumber2 => _pokenumber2;
+    public PokemonNature Nature => _nature;
 }
 }

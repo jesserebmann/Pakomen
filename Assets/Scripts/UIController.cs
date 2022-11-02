@@ -1,9 +1,6 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using Pakomen;
 using TMPro;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -140,8 +137,23 @@ public class UIController : MonoBehaviour
         _shiny.SetTrigger("PlayShiny");
     }
 
-    public void TogglePokemonInfoUI(bool isOpen)
+    public void ClosePokemonInfoUI()
     {
+        _pokemonInfoUI.SetActive(false);
+        _pokedexUI.SetActive(false);
+    }
+    
+    public void BackPokemonInfoUI()
+    {
+        _pokemonInfoUI.SetActive(false);
+        _pokedexUI.SetActive(true);
+    }
+    
+    public void TogglePokemonInfoUI(bool isOpen,string pokemonName)
+    {
+        if (pokemonName == "???") return;
+        if (isOpen)
+            PokemonInfoController.Instance.SetInfo(pokemonName,_pokedexUIShiny.activeInHierarchy);
         _pokemonInfoUI.SetActive(isOpen);
         _pokedexUI.SetActive(!isOpen);
     }
