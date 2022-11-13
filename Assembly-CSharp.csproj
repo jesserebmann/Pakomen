@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\Pokedex\PokedexPokemonBlueprint.cs" />
      <Compile Include="Assets\Scripts\Pokedex\PokedexController.cs" />
      <Compile Include="Assets\Encoder\LibMp3Lame.cs" />
+     <Compile Include="Assets\PokemonPartyController.cs" />
      <Compile Include="Assets\BattleTransitions\SimpleBlit.cs" />
      <Compile Include="Assets\ExampleConvert.cs" />
      <Compile Include="Assets\Scripts\SoundExtracter.cs" />
@@ -71,6 +72,7 @@
      <Compile Include="Assets\Encoder\EncodeMP3.cs" />
      <Compile Include="Assets\Scripts\UIController.cs" />
      <Compile Include="Assets\Encoder\IWaveProvider.cs" />
+     <Compile Include="Assets\Scripts\Pokemon\PokemonPartyItem.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

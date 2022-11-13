@@ -11,6 +11,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject _battleUI;
     [SerializeField] private GameObject _pokedexUI;
     [SerializeField] private GameObject _pokemonInfoUI;
+    [SerializeField] private GameObject _pokemonPartyUI;
     [SerializeField] private GameObject _pokedexUIBase;
     [SerializeField] private GameObject _pokedexUIShiny;
     [SerializeField] private Image _screenTransition;
@@ -64,6 +65,7 @@ public class UIController : MonoBehaviour
         SetBattleButtons(false);
         //play throw ball animation
         PokedexController.Instance.CatchPokemon(_pokemonName.text,_isShinyEncounter);
+        PokemonPartyController.Instance.AddToParty(_pokemonName.text,_isShinyEncounter);
         //Gotcha!
         //End encounter
         StopEncounter();
@@ -112,6 +114,19 @@ public class UIController : MonoBehaviour
         _pokedexUI.SetActive(true);
         _pokedexUIBase.SetActive(true);
         _pokedexUIShiny.SetActive(false);
+        _pokemonInfoUI.SetActive(false);
+        _pokemonPartyUI.SetActive(false);
+    }
+    
+    public void OpenPokemonParty()
+    {
+        if(!PokemonPartyController.Instance._isInitialized)
+            PokemonPartyController.Instance.Initialize();
+        _pokedexUI.SetActive(false);
+        _pokedexUIBase.SetActive(false);
+        _pokedexUIShiny.SetActive(false);
+        _pokemonInfoUI.SetActive(false);
+        _pokemonPartyUI.SetActive(true);
     }
     
     public void OpenPokedexShiny()
@@ -156,6 +171,11 @@ public class UIController : MonoBehaviour
             PokemonInfoController.Instance.SetInfo(pokemonName,_pokedexUIShiny.activeInHierarchy);
         _pokemonInfoUI.SetActive(isOpen);
         _pokedexUI.SetActive(!isOpen);
+    }
+
+    public void CloseCurrent(GameObject current)
+    {
+        current.SetActive(false);
     }
 
     public bool InEncounter => _inEncounter;

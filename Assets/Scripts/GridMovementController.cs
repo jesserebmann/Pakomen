@@ -1,15 +1,9 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Numerics;
 using Pakomen;
+using UnityEditor;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using Debug = UnityEngine.Debug;
 using Random = System.Random;
-using Vector2 = UnityEngine.Vector2;
-using Vector3 = UnityEngine.Vector3;
 
 public class GridMovementController : MonoBehaviour
 {
@@ -31,6 +25,8 @@ public class GridMovementController : MonoBehaviour
     private float _timeToMove = 0.2f;
     public float gridSize;
     public float blockRadius = 0.01f;
+    public int encounterRate = 10;
+    public int shinyRate = 100;
     public LayerMask movementBlock;
     public LayerMask encounterLayer;
     public Vector2 yourPosition;
@@ -50,6 +46,20 @@ public class GridMovementController : MonoBehaviour
     {
         _playerInput = GetComponent<UnityEngine.InputSystem.PlayerInput>();
     }
+
+    private void Start()
+    {
+        var positionX = PlayerPrefs.GetInt("positionX",0);
+        var positionY = PlayerPrefs.GetInt("positionY",0);
+        transform.SetPositionAndRotation(new Vector3(positionX,positionY),Quaternion.identity);
+    }
+
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("positionX",Convert.ToInt16(transform.position.x));
+        PlayerPrefs.SetInt("positionY",Convert.ToInt16(transform.position.y));
+    }
+
 
     private void FixedUpdate()
     {
@@ -99,32 +109,8 @@ public class GridMovementController : MonoBehaviour
                 MovementButtonPressed(Directions.Down);
             }
         }
-
-        /*if (_isMoving) return;
-        if (Gamepad.current.dpad.right.isPressed)
-        {
-            if (CheckMovementBlock(transform.position)) return;
-            MovementButtonPressed("Right");
-            return;
-        }
-        if (Gamepad.current.dpad.left.isPressed)
-        {
-            if (CheckMovementBlock(transform.position)) return;
-            MovementButtonPressed("Left");
-            return;
-        }
-        if (Gamepad.current.dpad.down.isPressed)
-        {
-            if (CheckMovementBlock(transform.position)) return;
-            MovementButtonPressed("Down");
-            return;
-        }
-        if (Gamepad.current.dpad.up.isPressed)
-        {
-            if (CheckMovementBlock(transform.position)) return;
-            MovementButtonPressed("Up");
-            return;
-        }*/
+        PlayerPrefs.SetInt("positionX",Convert.ToInt16(transform.position.x));
+        PlayerPrefs.SetInt("positionY",Convert.ToInt16(transform.position.y));
     }
 
     public void MovementButtonPressed(Directions direction)
@@ -175,14 +161,14 @@ public class GridMovementController : MonoBehaviour
         if (colliders.Length > 0)
         {
             
-            int number = _random.Next(0, 10);
+            int number = _random.Next(0, encounterRate);
             if (number <= 1)
             {
                 playerAnimator.SetBool("IsMoving",false);
                 Debug.Log("Encounter");
                 var region = colliders[0].gameObject.GetComponentInParent<WildRegion>();
                 var pokemonEncounter = region.GetPokemonEncounter();
-                var isShiny = _random.Next(0, 100) == 1;
+                var isShiny = _random.Next(0, shinyRate) == 1;
                 Debug.Log(pokemonEncounter.name);
                 _UIController.StartEncounter(pokemonEncounter,isShiny);
             }

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Pakomen;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PokedexController : MonoBehaviour
 {
@@ -117,6 +118,13 @@ public class PokedexController : MonoBehaviour
                 shinyPok.PokemonName.SetText(pokemon.name);  
             }
         }
+    }
+
+    public Sprite GetPokemonSprite(string Name, bool isShiny)
+    {
+        if (isShiny)
+            return shinyPokemonList[Name].PokemonImage.sprite;
+        return basePokemonList[Name].PokemonImage.sprite;
     }
 
     public static PokedexController Instance  { get; private set; }
