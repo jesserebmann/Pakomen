@@ -21,7 +21,8 @@ public class PokemonInfoController : MonoBehaviour
     [SerializeField] private List<Sprite> _typeSprites;
 
     public static PokemonInfoController Instance;
-    private Dictionary<string, Sprite> _types;  
+    private Dictionary<string, Sprite> _types;
+    private bool _isShiny;
     
     public void Start()
     {
@@ -44,8 +45,14 @@ public class PokemonInfoController : MonoBehaviour
             var test = _types[pokemonResource.Type1.ToString()];
             var test2 = _types[pokemonResource.Type2.ToString()];
             _name.text = pokemonResource.PokemonName;
+            _isShiny = isShiny;
             //_type1 = pokemonResource.Type1;
             //_pokemonThumb.sprite = (isShiny) ? pokemonData.
+    }
+
+    public void AddToParty(int partyPosition)
+    {
+        PokemonPartyController.Instance.AddToParty(partyPosition,_name.text,_isShiny);
     }
 
 

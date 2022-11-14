@@ -71,6 +71,11 @@ public class PokemonPartyController : MonoBehaviour
         StoreParty();
     }
 
+    private void UpdatePartyInfo(int position, Sprite image)
+    {
+        
+    }
+
     public void StoreParty()
     {
         PlayerPrefs.SetString($"storedparty",JsonUtility.ToJson(_storedParty));

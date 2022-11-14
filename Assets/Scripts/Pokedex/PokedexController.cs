@@ -27,6 +27,7 @@ public class PokedexController : MonoBehaviour
     void Start()
     {
         Instance = this;
+        var pokemonsResource = (PokemonBase)Resources.Load($"Pokemons");
         basePokemonList = new Dictionary<string, PokedexPokemonBlueprint>();
         shinyPokemonList = new Dictionary<string, PokedexPokemonBlueprint>();
         if(_initializePokedexData)

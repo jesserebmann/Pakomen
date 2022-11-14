@@ -46,6 +46,7 @@
      <Compile Include="Assets\Encoder\WaveFormat.cs" />
      <Compile Include="Assets\Encoder\CopyTo.cs" />
      <Compile Include="Assets\Scripts\SavWav.cs" />
+     <Compile Include="Assets\Scripts\Pokemon\PokemonPartyItem.cs" />
      <Compile Include="Assets\Scripts\BattleController.cs" />
      <Compile Include="Assets\Scripts\Pokemon\PokemonBase.cs" />
      <Compile Include="Assets\Encoder\Naudio_Utils\MarshalHelpers.cs" />
@@ -72,7 +73,6 @@
      <Compile Include="Assets\Encoder\EncodeMP3.cs" />
      <Compile Include="Assets\Scripts\UIController.cs" />
      <Compile Include="Assets\Encoder\IWaveProvider.cs" />
-     <Compile Include="Assets\Scripts\Pokemon\PokemonPartyItem.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
