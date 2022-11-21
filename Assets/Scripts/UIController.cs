@@ -31,6 +31,8 @@ public class UIController : MonoBehaviour
     private bool _isShinyEncounter;
     public static UIController Instance;
 
+    private string _lastOpenWindow;
+
     public void Start()
     {
         Instance = this;
@@ -139,6 +141,8 @@ public class UIController : MonoBehaviour
         _pokedexUI.SetActive(false);
         _pokedexUIBase.SetActive(false);
         _pokedexUIShiny.SetActive(false);
+        _lastOpenWindow = string.Empty;
+
     }
 
     public void SetBattleButtons(bool isActive)
@@ -156,19 +160,34 @@ public class UIController : MonoBehaviour
     {
         _pokemonInfoUI.SetActive(false);
         _pokedexUI.SetActive(false);
+        _lastOpenWindow = string.Empty;
+    }
+    
+    public void ClosePokemonPartyUI()
+    {
+        _lastOpenWindow = "PokemonParty";
+        _pokemonPartyUI.SetActive(false);
     }
     
     public void BackPokemonInfoUI()
     {
+        if (_lastOpenWindow == "PokemonParty")
+            _pokemonPartyUI.SetActive(true);
+        else
+            _pokedexUI.SetActive(true);
+        
         _pokemonInfoUI.SetActive(false);
-        _pokedexUI.SetActive(true);
+        
     }
     
-    public void TogglePokemonInfoUI(bool isOpen,string pokemonName)
+    public void TogglePokemonInfoUI(bool isOpen,string pokemonName,bool isShiny = false)
     {
+        if(!PokemonPartyController.Instance._isInitialized)
+            PokemonPartyController.Instance.Initialize();
         if (pokemonName == "???") return;
+        PokemonInfoController.Instance.UpdatePartyItems();
         if (isOpen)
-            PokemonInfoController.Instance.SetInfo(pokemonName,_pokedexUIShiny.activeInHierarchy);
+            PokemonInfoController.Instance.SetInfo(pokemonName,_pokedexUIShiny.activeInHierarchy ? true: isShiny);
         _pokemonInfoUI.SetActive(isOpen);
         _pokedexUI.SetActive(!isOpen);
     }
@@ -176,6 +195,7 @@ public class UIController : MonoBehaviour
     public void CloseCurrent(GameObject current)
     {
         current.SetActive(false);
+        _lastOpenWindow = string.Empty;
     }
 
     public bool InEncounter => _inEncounter;

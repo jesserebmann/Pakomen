@@ -56,6 +56,7 @@ public class PokemonPartyController : MonoBehaviour
         partyList[_partyCount].PartySprite.sprite = PokedexController.Instance.GetPokemonSprite(PokemonName,isShiny);
         _storedParty.PokemonNames.Add(PokemonName);
         _storedParty.IsShiny.Add(isShiny);
+        UpdatePartyInfo(_partyCount,partyList[_partyCount].PartySprite.sprite);
         _partyCount++;
         StoreParty();
     }
@@ -73,7 +74,7 @@ public class PokemonPartyController : MonoBehaviour
 
     private void UpdatePartyInfo(int position, Sprite image)
     {
-        
+        PokemonInfoController.Instance.SetPartyItem(position, image);
     }
 
     public void StoreParty()

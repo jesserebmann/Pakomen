@@ -11,4 +11,10 @@ public class PokemonPartyItem : MonoBehaviour
     public TextMeshProUGUI PartyName;
     public Image PartySprite;
     public bool IsShiny;
+
+    public void OpenDetails()
+    {
+        UIController.Instance.ClosePokemonPartyUI();
+        UIController.Instance.TogglePokemonInfoUI(true,PartyName.text,IsShiny);
+    }
 }

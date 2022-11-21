@@ -8,12 +8,7 @@ using UnityEngine.UI;
 public class PokemonInfoController : MonoBehaviour
 {
     [SerializeField] private Image _pokemonThumb;
-    [SerializeField] private Image _pokemonParty1Thumb;
-    [SerializeField] private Image _pokemonParty2Thumb;
-    [SerializeField] private Image _pokemonParty3Thumb;
-    [SerializeField] private Image _pokemonParty4Thumb;
-    [SerializeField] private Image _pokemonParty5Thumb;
-    [SerializeField] private Image _pokemonParty6Thumb;
+    [SerializeField] private Image[] _pokemonPartyThumbs;
     [SerializeField] private Image _type1;
     [SerializeField] private Image _type2;
     [SerializeField] private TextMeshProUGUI _nature;
@@ -36,11 +31,14 @@ public class PokemonInfoController : MonoBehaviour
 
     public void SetInfo(string pokemonId, bool isShiny)
     {
-        var data = PlayerPrefs.GetString($"{pokemonId.Substring(4)}"); 
+        var name = pokemonId;
+        if (pokemonId.Split('_').Length > 1)
+            name = pokemonId.Split('_')[1];
+        var data = PlayerPrefs.GetString($"{name}"); 
         var pokemonData = JsonUtility.FromJson<PokedexController.pokedexPokemon>(data);
         //_pokemonThumb.sprite = pokemonData.sprite
         _pokemonThumb.color = Color.white;
-            var pokemonResource = (PokemonBase)Resources.Load($"Pokemons/{pokemonId}");
+            var pokemonResource = PokedexController.Instance.PokemonBaseList[name];
             _pokemonThumb.sprite = isShiny ? pokemonResource.ShinySprite : pokemonResource.DefaultSprite;
             var test = _types[pokemonResource.Type1.ToString()];
             var test2 = _types[pokemonResource.Type2.ToString()];
@@ -53,6 +51,25 @@ public class PokemonInfoController : MonoBehaviour
     public void AddToParty(int partyPosition)
     {
         PokemonPartyController.Instance.AddToParty(partyPosition,_name.text,_isShiny);
+        UpdatePartyItem(partyPosition);
+    }
+
+    public void SetPartyItem(int position, Sprite sprite)
+    {
+        _pokemonPartyThumbs[position].sprite = sprite;
+    }
+
+    public void UpdatePartyItem(int index)
+    {
+        _pokemonPartyThumbs[index].sprite = PokemonPartyController.Instance.partyList[index].PartySprite.sprite;
+    }
+    
+    public void UpdatePartyItems()
+    {
+        for (int i = 0; i < PokemonPartyController.Instance.partyList.Length; ++i)
+        {
+            UpdatePartyItem(i);
+        }
     }
 
 

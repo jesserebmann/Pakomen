@@ -21,15 +21,17 @@ public class PokedexController : MonoBehaviour
     [SerializeField] private GameObject _pokedexShiny;
     [SerializeField] private Transform _pokedexShinyList;
     [SerializeField] private PokemonBase[] _pokemons;
-
-    private Dictionary<string, PokedexPokemonBlueprint> basePokemonList;
-    private Dictionary<string, PokedexPokemonBlueprint> shinyPokemonList;
+    
+    private Dictionary<string, PokemonBase> _pokemonDictionary;
+    private Dictionary<string, PokedexPokemonBlueprint> _basePokemonList;
+    private Dictionary<string, PokedexPokemonBlueprint> _shinyPokemonList;
     void Start()
     {
         Instance = this;
-        var pokemonsResource = (PokemonBase)Resources.Load($"Pokemons");
-        basePokemonList = new Dictionary<string, PokedexPokemonBlueprint>();
-        shinyPokemonList = new Dictionary<string, PokedexPokemonBlueprint>();
+        _pokemons = Resources.LoadAll<PokemonBase>($"Pokemons");
+        _pokemonDictionary = new Dictionary<string, PokemonBase>();
+        _basePokemonList = new Dictionary<string, PokedexPokemonBlueprint>();
+        _shinyPokemonList = new Dictionary<string, PokedexPokemonBlueprint>();
         if(_initializePokedexData)
             PlayerPrefs.SetInt("PokedexIsInitialized",0);
         if (PlayerPrefs.GetInt("PokedexIsInitialized") != 1)
@@ -65,19 +67,19 @@ public class PokedexController : MonoBehaviour
         if (isShiny)
         {
             pokemonData.isCaughtShiny = true;
-            if (shinyPokemonList.Keys.Contains(pokemonData.pokemonName))
+            if (_shinyPokemonList.Keys.Contains(pokemonData.pokemonName))
             {
-                shinyPokemonList[pokemonData.pokemonName].PokemonName.SetText(pokemonId);
-                shinyPokemonList[pokemonData.pokemonName].PokemonImage.color = Color.white;
+                _shinyPokemonList[pokemonData.pokemonName].PokemonName.SetText(pokemonId);
+                _shinyPokemonList[pokemonData.pokemonName].PokemonImage.color = Color.white;
             }
         }
         else
         {
             pokemonData.isCaught = true;
-            if (basePokemonList.Keys.Contains(pokemonData.pokemonName))
+            if (_basePokemonList.Keys.Contains(pokemonData.pokemonName))
             {
-                basePokemonList[pokemonData.pokemonName].PokemonName.SetText(pokemonId);
-                basePokemonList[pokemonData.pokemonName].PokemonImage.color = Color.white;
+                _basePokemonList[pokemonData.pokemonName].PokemonName.SetText(pokemonId);
+                _basePokemonList[pokemonData.pokemonName].PokemonImage.color = Color.white;
             }
 
         }
@@ -92,8 +94,9 @@ public class PokedexController : MonoBehaviour
             var shinyPok = Instantiate(_pokedexPakomenBlueprint, _pokedexShinyList);
             var data = PlayerPrefs.GetString($"{pokemon.PokemonName}");
             var pokemonData = JsonUtility.FromJson<pokedexPokemon>(data);
-            basePokemonList.Add(pokemonData.pokemonName,basePok);
-            shinyPokemonList.Add(pokemonData.pokemonName,shinyPok);
+            _pokemonDictionary.Add(pokemonData.pokemonName,pokemon);
+            _basePokemonList.Add(pokemonData.pokemonName,basePok);
+            _shinyPokemonList.Add(pokemonData.pokemonName,shinyPok);
             basePok.PokemonImage.sprite = pokemon.DefaultSprite;
             if (!pokemonData.isCaught)
             {
@@ -124,9 +127,12 @@ public class PokedexController : MonoBehaviour
     public Sprite GetPokemonSprite(string Name, bool isShiny)
     {
         if (isShiny)
-            return shinyPokemonList[Name].PokemonImage.sprite;
-        return basePokemonList[Name].PokemonImage.sprite;
+            return _shinyPokemonList[Name].PokemonImage.sprite;
+        return _basePokemonList[Name].PokemonImage.sprite;
     }
 
+    public Dictionary<string, PokedexPokemonBlueprint> BaseList => _basePokemonList;
+    public Dictionary<string, PokedexPokemonBlueprint> ShinyList => _shinyPokemonList;
+    public Dictionary<string, PokemonBase> PokemonBaseList => _pokemonDictionary;
     public static PokedexController Instance  { get; private set; }
 }
