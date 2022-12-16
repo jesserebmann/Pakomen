@@ -180,6 +180,7 @@ public class UIController : MonoBehaviour
         
     }
     
+    
     public void TogglePokemonInfoUI(bool isOpen,string pokemonName,bool isShiny = false)
     {
         if(!PokemonPartyController.Instance._isInitialized)
@@ -197,6 +198,20 @@ public class UIController : MonoBehaviour
         current.SetActive(false);
         _lastOpenWindow = string.Empty;
     }
+
+    #region Events
+
+    public void HandleOnATap()
+    {
+        if (DialogController.Instance.IsOpen)
+        {
+            DialogController.Instance.CloseDialog();
+            return;
+        }
+        
+    }
+
+    #endregion Events
 
     public bool InEncounter => _inEncounter;
 }
