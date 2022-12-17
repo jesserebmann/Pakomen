@@ -112,6 +112,7 @@ public class GridMovementController : MonoBehaviour
             {
                 playerAnimator.SetFloat("MoveX",1);
                 playerAnimator.SetFloat("MoveY",0);
+                _lookatDirection = Directions.Right;
                 if (CheckMovementBlock(new Vector2(transform.position.x+gridSize,transform.position.y))) return;
                 MovementButtonPressed(Directions.Right);
             }
@@ -119,6 +120,7 @@ public class GridMovementController : MonoBehaviour
             {
                 playerAnimator.SetFloat("MoveX",-1);
                 playerAnimator.SetFloat("MoveY",0);
+                _lookatDirection = Directions.Left;
                 if (CheckMovementBlock(new Vector2(transform.position.x-gridSize,transform.position.y))) return;
                 MovementButtonPressed(Directions.Left);
             }
@@ -129,6 +131,7 @@ public class GridMovementController : MonoBehaviour
             {
                 playerAnimator.SetFloat("MoveX",0);
                 playerAnimator.SetFloat("MoveY",1);
+                _lookatDirection = Directions.Up;
                 if (CheckMovementBlock(new Vector2(transform.position.x,transform.position.y+gridSize))) return;
                 MovementButtonPressed(Directions.Up);
             }
@@ -136,6 +139,7 @@ public class GridMovementController : MonoBehaviour
             {
                 playerAnimator.SetFloat("MoveX",0);
                 playerAnimator.SetFloat("MoveY",-1);
+                _lookatDirection = Directions.Down;
                 if (CheckMovementBlock(new Vector2(transform.position.x,transform.position.y-gridSize))) return;
                 MovementButtonPressed(Directions.Down);
             }
@@ -150,23 +154,20 @@ public class GridMovementController : MonoBehaviour
         {
             case Directions.Up:
                 StartCoroutine(MovePlayer(Vector3.up));
-                _lookatDirection = Directions.Up;
                 break;
             case Directions.Down:
                 StartCoroutine(MovePlayer(Vector3.down));
-                _lookatDirection = Directions.Down;
                 break;
             case Directions.Left:
                 StartCoroutine(MovePlayer(Vector3.left));
-                _lookatDirection = Directions.Left;
                 break;
             case Directions.Right:
                 StartCoroutine(MovePlayer(Vector3.right));
-                _lookatDirection = Directions.Right;
                 break;
             
         }
     }
+    
 
     private IEnumerator MovePlayer(Vector3 direction)
     {
@@ -224,24 +225,29 @@ public class GridMovementController : MonoBehaviour
     private Interactable CheckActionInteractable()
     {
         RaycastHit2D hit = new RaycastHit2D();
+        Vector2 target = new Vector2();
         switch (_lookatDirection)
         {
             case Directions.Up:
-                hit = Physics2D.Raycast(transform.position, new Vector2(transform.position.x,transform.position.y+gridSize),actionLayer);
+                target = new Vector2(transform.position.x, transform.position.y + gridSize);
+                hit = Physics2D.Linecast(transform.position, new Vector2(transform.position.x,transform.position.y+gridSize),actionLayer);
                 break;
             case Directions.Down:
-                hit = Physics2D.Raycast(transform.position, new Vector2(transform.position.x,transform.position.y-gridSize),actionLayer);
+                target = new Vector2(transform.position.x, transform.position.y - gridSize);
+                hit = Physics2D.Linecast(transform.position, new Vector2(transform.position.x,transform.position.y-gridSize),actionLayer);
                 break;
             case Directions.Left:
-                hit = Physics2D.Raycast(transform.position, new Vector2(transform.position.x+gridSize,transform.position.y),actionLayer);
+                new Vector2(transform.position.x - gridSize, transform.position.y);
+                hit = Physics2D.Linecast(transform.position, new Vector2(transform.position.x-gridSize,transform.position.y),actionLayer);
                 break;
             case Directions.Right:
-                hit = Physics2D.Raycast(transform.position, new Vector2(transform.position.x-gridSize,transform.position.y),actionLayer);
+                target = new Vector2(transform.position.x+gridSize,transform.position.y);
+                hit = Physics2D.Linecast(transform.position, new Vector2(transform.position.x+gridSize,transform.position.y),actionLayer);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
-
+        Debug.Log($"pos : {transform.position}   target : {target}   lookat: {_lookatDirection.ToString()}");
         if (hit.collider)
         {
             return hit.transform.GetComponent<Interactable>();
