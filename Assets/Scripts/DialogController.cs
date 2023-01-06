@@ -50,4 +50,5 @@ public class DialogController : MonoBehaviour
 
     public static DialogController Instance => _instance;
     public bool IsOpen;
+    public Interactable CurrentInteractable;
 }

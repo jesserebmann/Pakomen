@@ -8,6 +8,7 @@ namespace Pakomen
     public class WildRegion : MonoBehaviour
     {
         [SerializeField] private WildBase _regionWild;
+        [SerializeField] private Sprite _background;
 
         private Random _random = new Random();
         

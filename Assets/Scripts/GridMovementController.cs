@@ -40,8 +40,10 @@ public class GridMovementController : MonoBehaviour
     public Animator playerAnimator;
     public UIController _UIController;
     private Directions _lookatDirection;
-    
-    
+    private AudioSource _source1;
+    private AudioSource _source2;
+
+
 
     private bool _inputActive;
     private Random _random = new Random();
@@ -167,7 +169,11 @@ public class GridMovementController : MonoBehaviour
             
         }
     }
-    
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("Test");
+        //AudioManager.Instance.PlayAreaAudio(_audioSource);
+    }
 
     private IEnumerator MovePlayer(Vector3 direction)
     {
