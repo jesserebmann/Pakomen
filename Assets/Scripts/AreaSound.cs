@@ -6,9 +6,5 @@ public class AreaSound : MonoBehaviour
 {
     [SerializeField] private AudioSource _audioSource; // drag the music player here or...
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        AudioManager.Instance.PlayAreaAudio(_audioSource);
-    }
-    
+    public AudioSource AudioSource => _audioSource;
 }

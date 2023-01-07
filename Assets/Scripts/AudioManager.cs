@@ -7,6 +7,10 @@ public class AudioManager : MonoBehaviour
 {
 
     private AudioSource _currentAudioSource;
+    private AreaSound _currentAreaSound;
+
+    [SerializeField] private AudioSource _encounterAudioSource;
+    [SerializeField] private AudioSource _shinyAudioSource;
 
     #region Methods
 
@@ -22,11 +26,43 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void PlayEncounterAudio()
+    {
+        _encounterAudioSource.Play();
+    }
+    
+    public void PlayEncounterShinyAudio()
+    {
+        _shinyAudioSource.Play();
+    }
+
+    public void StopEncounterAudio()
+    {
+        _encounterAudioSource.Stop();
+    }
+
     public void PlayAreaAudio(AudioSource audio)
     {
         if(_currentAudioSource != null)_currentAudioSource.Stop();
         audio.Play();
         _currentAudioSource = audio;
+    }
+
+    public void UpdateAreaAudio(AreaSound audio)
+    {
+        if (_currentAreaSound is not null && _currentAreaSound == audio) return;
+        _currentAreaSound = audio;
+        PlayAreaAudio(audio.AudioSource);
+    }
+
+    public void Pause()
+    {
+        _currentAudioSource.Pause();
+    }
+
+    public void Resume()
+    {
+        _currentAudioSource.Play();
     }
 
     #endregion Methods
@@ -36,6 +72,7 @@ public class AudioManager : MonoBehaviour
     #region Properties
 
     public static AudioManager Instance { get; private set; }
+    public AreaSound Type { get; set; }
 
     #endregion Properties
 }

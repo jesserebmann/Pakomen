@@ -34,6 +34,8 @@ public class GridMovementController : MonoBehaviour
     public LayerMask movementBlock;
     public LayerMask actionLayer;
     public LayerMask encounterLayer;
+    public LayerMask audioLayer;
+    public LayerMask waterLayer;
     public Vector2 yourPosition;
     private Transform _begintransform;
     private UnityEngine.InputSystem.PlayerInput _playerInput;
@@ -43,7 +45,7 @@ public class GridMovementController : MonoBehaviour
     private AudioSource _source1;
     private AudioSource _source2;
 
-
+    [SerializeField] private Collider2D _playerCollider;
 
     private bool _inputActive;
     private Random _random = new Random();
@@ -54,6 +56,7 @@ public class GridMovementController : MonoBehaviour
     private void Awake()
     {
         _playerInput = GetComponent<UnityEngine.InputSystem.PlayerInput>();
+        
     }
 
     private void Start()
@@ -61,6 +64,8 @@ public class GridMovementController : MonoBehaviour
         var positionX = PlayerPrefs.GetInt("positionX",0);
         var positionY = PlayerPrefs.GetInt("positionY",0);
         transform.SetPositionAndRotation(new Vector3(positionX,positionY),Quaternion.identity);
+        var audioAreaItem = Physics2D.OverlapCircle(transform.position, blockRadius, audioLayer)?.GetComponent<AreaSound>();
+        if(audioAreaItem) AudioManager.Instance.UpdateAreaAudio(audioAreaItem);
     }
 
     private void OnApplicationQuit()
@@ -94,8 +99,17 @@ public class GridMovementController : MonoBehaviour
     }
 
 
-    private void FixedUpdate()
+    private void Update()
     {
+        if (_playerCollider.IsTouchingLayers(waterLayer))
+        {
+            //Change playersprite
+        }
+        else
+        {
+            
+        }
+        
         if (_isMoving || _UIController.InEncounter || DialogController.Instance.IsOpen) return;
         var input = _playerInput.actions["Move"].ReadValue<Vector2>();
         if (input == Vector2.zero)
@@ -169,11 +183,6 @@ public class GridMovementController : MonoBehaviour
             
         }
     }
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("Test");
-        //AudioManager.Instance.PlayAreaAudio(_audioSource);
-    }
 
     private IEnumerator MovePlayer(Vector3 direction)
     {
@@ -193,6 +202,8 @@ public class GridMovementController : MonoBehaviour
             transform.position = _targetPos;
             _isMoving = false;
             CheckForEncounters();
+            var audioAreaItem = Physics2D.OverlapCircle(transform.position, blockRadius, audioLayer).GetComponent<AreaSound>();
+            if(audioAreaItem) AudioManager.Instance.UpdateAreaAudio(audioAreaItem);
             yield return null;
     }
 
@@ -212,6 +223,8 @@ public class GridMovementController : MonoBehaviour
                 var isShiny = _random.Next(0, shinyRate) == 1;
                 Debug.Log(pokemonEncounter.name);
                 _UIController.StartEncounter(pokemonEncounter,isShiny);
+                AudioManager.Instance.Pause();
+                AudioManager.Instance.PlayEncounterAudio();
             }
         }
     }

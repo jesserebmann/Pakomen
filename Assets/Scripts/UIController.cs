@@ -60,6 +60,8 @@ public class UIController : MonoBehaviour
         _battleCamera.gameObject.SetActive(false);
         _battleUI.SetActive(false);
         _inEncounter = false;
+        AudioManager.Instance.StopEncounterAudio();
+        AudioManager.Instance.Resume();
     }
 
     public void CatchPokemon()
@@ -154,6 +156,7 @@ public class UIController : MonoBehaviour
     public void PlayShiny()
     {
         _shiny.SetTrigger("PlayShiny");
+        AudioManager.Instance.PlayEncounterShinyAudio();
     }
 
     public void ClosePokemonInfoUI()
