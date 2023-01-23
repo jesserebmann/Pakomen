@@ -46,6 +46,7 @@
      <Compile Include="Assets\Scripts\Pokedex\PokemonInfoController.cs" />
      <Compile Include="Assets\Encoder\WaveFormat.cs" />
      <Compile Include="Assets\Encoder\CopyTo.cs" />
+     <Compile Include="Assets\Scripts\EncounterManager.cs" />
      <Compile Include="Assets\Scripts\SavWav.cs" />
      <Compile Include="Assets\Scripts\Pokemon\PokemonPartyItem.cs" />
      <Compile Include="Assets\Scripts\AudioManager.cs" />

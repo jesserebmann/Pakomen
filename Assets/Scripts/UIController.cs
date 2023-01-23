@@ -22,8 +22,8 @@ public class UIController : MonoBehaviour
     [SerializeField] private Button _catchButton;
     [SerializeField] private Button _runButton;
     private bool _isTransitioning;
-    private float _transitionTime = 1f;
-    private float _pokeloadTime = 1.5f;
+    [SerializeField] private float _transitionTime = 1f;
+    [SerializeField] private float _pokeloadTime = 1.5f;
     private float _currentFadeValue = 0f;
     private float _targetFadeValue = 0.8f;
 
@@ -32,6 +32,7 @@ public class UIController : MonoBehaviour
     public static UIController Instance;
 
     private string _lastOpenWindow;
+    private PokemonBase _currentPokemon;
 
     public void Start()
     {
@@ -44,6 +45,7 @@ public class UIController : MonoBehaviour
     public void StartEncounter(PokemonBase pokemon,bool isShiny)
     {
         SetBattleButtons(false);
+        _currentPokemon = pokemon;
         _isShinyEncounter = isShiny;
         _inEncounter = true;
         _pokemonName.text = pokemon.PokemonName;
@@ -62,17 +64,37 @@ public class UIController : MonoBehaviour
         _inEncounter = false;
         AudioManager.Instance.StopEncounterAudio();
         AudioManager.Instance.Resume();
+        _currentPokemon = null;
+    }
+
+    public void ThrowAtPokemon()
+    {
+        EncounterManager.Instance.Throw();
+    }
+
+    public void HandleCatchCompleted()
+    {
+        if (EncounterManager.Instance.TryCatching())
+        {
+            SetBattleButtons(false);
+            BattleController.Instance.PlayCaught();
+            PokedexController.Instance.CatchPokemon(_pokemonName.text,_isShinyEncounter);
+            PokemonPartyController.Instance.AddToParty(_pokemonName.text,_isShinyEncounter);
+            Debug.Log("Catched it");
+            return;
+        }
+
+        if (EncounterManager.Instance.CheckIfRun())
+        {
+            BattleController.Instance.PlayFled();
+            return;
+        }
+        BattleController.Instance.Escaped();
     }
 
     public void CatchPokemon()
     {
-        SetBattleButtons(false);
-        //play throw ball animation
-        PokedexController.Instance.CatchPokemon(_pokemonName.text,_isShinyEncounter);
-        PokemonPartyController.Instance.AddToParty(_pokemonName.text,_isShinyEncounter);
-        //Gotcha!
-        //End encounter
-        StopEncounter();
+        BattleController.Instance.Catch();
     }
 
     public IEnumerator FadeScreenIn()
@@ -93,7 +115,7 @@ public class UIController : MonoBehaviour
         _mainCamera.gameObject.SetActive(false);
         _battleCamera.gameObject.SetActive(true);
         _battleUI.SetActive(true);
-        SetBattleButtons(true);
+        SetBattleButtons(false);
         StartCoroutine(FadeScreenOut());
     }
     
@@ -101,11 +123,12 @@ public class UIController : MonoBehaviour
     {
         if (_isShinyEncounter) 
             PlayShiny();
-        _currentFadeValue = 0f;
+        _currentFadeValue = 1f;
         float elapsedTime = 0;
-        while (elapsedTime < _pokeloadTime)
+        while (elapsedTime < _transitionTime)
         {
-            _currentFadeValue = Mathf.Lerp(_currentFadeValue, _targetFadeValue, Time.deltaTime);
+            _currentFadeValue = Mathf.Lerp(_currentFadeValue, 0, Time.deltaTime);
+            _transition.SetFloat("_Transition",_currentFadeValue );
             elapsedTime += Time.deltaTime;
             yield return null;
         }
@@ -151,6 +174,9 @@ public class UIController : MonoBehaviour
     {
         _runButton.interactable = isActive;
         _catchButton.interactable = isActive;
+        //Play pokemon animation and sounds
+        if (!isActive || _currentPokemon == null) return;
+        AudioManager.Instance.PlayPokemonSounds(_currentPokemon.PokeNumber1.ToString(),_currentPokemon.PokeNumber2.ToString());
     }
 
     public void PlayShiny()

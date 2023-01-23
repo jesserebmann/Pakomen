@@ -41,6 +41,8 @@ public class GridMovementController : MonoBehaviour
     private UnityEngine.InputSystem.PlayerInput _playerInput;
     public Animator playerAnimator;
     public UIController _UIController;
+    public SpriteRenderer _playerSprite;
+    public ParticleSystem _grassParticle;
     private Directions _lookatDirection;
     private AudioSource _source1;
     private AudioSource _source2;
@@ -193,18 +195,18 @@ public class GridMovementController : MonoBehaviour
         _origPos = transform.position;
         _targetPos = _origPos + (direction*gridSize);
         while (elapsedTime < _timeToMove)
-            {
-                transform.position = Vector3.Lerp(_origPos, _targetPos, (elapsedTime / _timeToMove));
-                elapsedTime += Time.deltaTime;
-                yield return null;
-                
-            }
-            transform.position = _targetPos;
-            _isMoving = false;
-            CheckForEncounters();
-            var audioAreaItem = Physics2D.OverlapCircle(transform.position, blockRadius, audioLayer).GetComponent<AreaSound>();
-            if(audioAreaItem) AudioManager.Instance.UpdateAreaAudio(audioAreaItem);
+        {
+            transform.position = Vector3.Lerp(_origPos, _targetPos, (elapsedTime / _timeToMove));
+            elapsedTime += Time.deltaTime;
             yield return null;
+                
+        }
+        transform.position = _targetPos;
+        _isMoving = false;
+        CheckForEncounters();
+        var audioAreaItem = Physics2D.OverlapCircle(transform.position, blockRadius, audioLayer).GetComponent<AreaSound>();
+        if(audioAreaItem != null) AudioManager.Instance.UpdateAreaAudio(audioAreaItem);
+        yield return null;
     }
 
     private void CheckForEncounters()
@@ -212,21 +214,29 @@ public class GridMovementController : MonoBehaviour
         var colliders = Physics2D.OverlapCircleAll(transform.position, blockRadius, encounterLayer);
         if (colliders.Length > 0)
         {
-            
+            var region = colliders[0].gameObject.GetComponentInParent<WildRegion>();
+
+            if (region.WildType == WildRegion.WildeType.Grass)
+            {
+                _playerSprite.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+                _grassParticle.Play();
+            }
             int number = _random.Next(0, encounterRate);
             if (number <= 1)
             {
                 playerAnimator.SetBool("IsMoving",false);
-                Debug.Log("Encounter");
-                var region = colliders[0].gameObject.GetComponentInParent<WildRegion>();
+                //Debug.Log("Encounter");
                 var pokemonEncounter = region.GetPokemonEncounter();
                 var isShiny = _random.Next(0, shinyRate) == 1;
-                Debug.Log(pokemonEncounter.name);
+                //Debug.Log(pokemonEncounter.name);
                 _UIController.StartEncounter(pokemonEncounter,isShiny);
                 AudioManager.Instance.Pause();
                 AudioManager.Instance.PlayEncounterAudio();
             }
         }
+        else
+            _playerSprite.maskInteraction = SpriteMaskInteraction.None;
+
     }
 
 
@@ -234,10 +244,16 @@ public class GridMovementController : MonoBehaviour
     {
         var isBlockedByStatic = Physics2D.OverlapCircle(targetPos, blockRadius, movementBlock);
         if (isBlockedByStatic)
+        {
+            AudioManager.Instance.PlayWallBump();
             return true;
+        }
         var isBlockedByActionItem = Physics2D.OverlapCircle(targetPos, blockRadius, actionLayer);
         if (isBlockedByActionItem)
+        {
+            AudioManager.Instance.PlayWallBump();
             return true;
+        }
         return false;
     }
 

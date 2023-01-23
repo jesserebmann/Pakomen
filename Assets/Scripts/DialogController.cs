@@ -10,6 +10,7 @@ public class DialogController : MonoBehaviour
 
     [SerializeField] private GameObject _dialogUI;
     [SerializeField] private TextMeshProUGUI _dialogText;
+    [SerializeField] private AudioSource _dialogSound;
     private static  DialogController _instance;
     private string[] _textQueue;
     private int _counter;
@@ -33,6 +34,7 @@ public class DialogController : MonoBehaviour
         if (_textQueue != null)
             _counter++;
         IsOpen = true;
+        _dialogSound.Play();
     }
     
     public void CloseDialog()

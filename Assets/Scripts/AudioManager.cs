@@ -11,6 +11,9 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioSource _encounterAudioSource;
     [SerializeField] private AudioSource _shinyAudioSource;
+    [SerializeField] private AudioSource _pokemonSound01;
+    [SerializeField] private AudioSource _pokemonSound02;
+    [SerializeField] private AudioSource _wallBump;
 
     #region Methods
 
@@ -34,6 +37,31 @@ public class AudioManager : MonoBehaviour
     public void PlayEncounterShinyAudio()
     {
         _shinyAudioSource.Play();
+    }
+
+    public void PlayWallBump()
+    {
+        if (_wallBump.isPlaying) return;
+        _wallBump.Play();
+    }
+
+    public void PlayPokemonSounds(string sound1,string sound2)
+    {
+        _pokemonSound01.clip = _pokemonSound02.clip = null;
+        AudioClip clip1 = Resources.Load<AudioClip>($"Cries/{sound1}");
+        AudioClip clip2 = Resources.Load<AudioClip>($"Cries/{sound2}");
+        if (clip1 != null)
+        {
+            //Debug.Log($"Playing sound 1 : {sound1}");
+            _pokemonSound01.clip = clip1;
+            _pokemonSound01.Play();
+        }
+        if (clip2 != null)
+        {
+            //Debug.Log($"Playing sound 2 : {sound2}");
+            _pokemonSound02.clip = clip2;
+            _pokemonSound02.Play();
+        }
     }
 
     public void StopEncounterAudio()

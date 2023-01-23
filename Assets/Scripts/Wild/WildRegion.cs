@@ -7,7 +7,14 @@ namespace Pakomen
 {
     public class WildRegion : MonoBehaviour
     {
+        public enum WildeType
+        {
+            Grass,
+            Water,
+            Cave
+        }
         [SerializeField] private WildBase _regionWild;
+        [SerializeField] private WildeType _wildType;
         [SerializeField] private Sprite _background;
 
         private Random _random = new Random();
@@ -41,5 +48,6 @@ namespace Pakomen
             }
         }
 
+        public WildeType WildType => _wildType;
     }
 }
