@@ -63,17 +63,18 @@ public class GridMovementController : MonoBehaviour
 
     private void Start()
     {
-        var positionX = PlayerPrefs.GetInt("positionX",0);
-        var positionY = PlayerPrefs.GetInt("positionY",0);
-        transform.SetPositionAndRotation(new Vector3(positionX,positionY),Quaternion.identity);
+        float positionX = PlayerPrefs.GetInt("positionX",0);
+        float positionY = PlayerPrefs.GetInt("positionY",0);
+        Debug.Log($"LoadedPosition : x = {positionX}   y = {positionY}");
+        transform.SetPositionAndRotation(new Vector3(positionX/10,positionY/10),Quaternion.identity);
         var audioAreaItem = Physics2D.OverlapCircle(transform.position, blockRadius, audioLayer)?.GetComponent<AreaSound>();
         if(audioAreaItem) AudioManager.Instance.UpdateAreaAudio(audioAreaItem);
     }
 
     private void OnApplicationQuit()
     {
-        PlayerPrefs.SetInt("positionX",Convert.ToInt16(transform.position.x));
-        PlayerPrefs.SetInt("positionY",Convert.ToInt16(transform.position.y));
+        //PlayerPrefs.SetInt("positionX",Convert.ToInt16(transform.position.x));
+        //PlayerPrefs.SetInt("positionY",Convert.ToInt16(transform.position.y));
     }
 
     public void OnAbuttonPressed()
@@ -189,6 +190,9 @@ public class GridMovementController : MonoBehaviour
                 
         }
         transform.position = _targetPos;
+        PlayerPrefs.SetInt("positionX",Convert.ToInt16(transform.position.x*10));
+        PlayerPrefs.SetInt("positionY",Convert.ToInt16(transform.position.y*10));
+        Debug.Log($"StoredPosition : x = {transform.position.x}   y=   {transform.position.y}");
         _isMoving = false;
         CheckForEncounters();
         var audioAreaItem = Physics2D.OverlapCircle(transform.position, blockRadius, audioLayer)?.GetComponent<AreaSound>();
