@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Random = System.Random;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Pakomen
 {
@@ -49,5 +50,6 @@ namespace Pakomen
         }
 
         public WildeType WildType => _wildType;
+        public Sprite Background => _background;
     }
 }

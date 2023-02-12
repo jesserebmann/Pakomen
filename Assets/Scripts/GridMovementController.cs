@@ -84,20 +84,7 @@ public class GridMovementController : MonoBehaviour
             return;
         }
         var interactable = CheckActionInteractable();
-        if(interactable)
-        {
-            switch (interactable.InteractableType)
-            {
-                case Interactable.interactableType.dialog:
-                    DialogController.Instance.OpenDialog(interactable.DialogText);
-                    break;
-                case Interactable.interactableType.item:
-                    break;
-                default:
-                    break;
-            }
-            
-        }
+        if(interactable) interactable.TriggerInteraction();
     }
 
 
@@ -204,7 +191,7 @@ public class GridMovementController : MonoBehaviour
         transform.position = _targetPos;
         _isMoving = false;
         CheckForEncounters();
-        var audioAreaItem = Physics2D.OverlapCircle(transform.position, blockRadius, audioLayer).GetComponent<AreaSound>();
+        var audioAreaItem = Physics2D.OverlapCircle(transform.position, blockRadius, audioLayer)?.GetComponent<AreaSound>();
         if(audioAreaItem != null) AudioManager.Instance.UpdateAreaAudio(audioAreaItem);
         yield return null;
     }
@@ -216,10 +203,25 @@ public class GridMovementController : MonoBehaviour
         {
             var region = colliders[0].gameObject.GetComponentInParent<WildRegion>();
 
-            if (region.WildType == WildRegion.WildeType.Grass)
+            switch (region.WildType)
             {
-                _playerSprite.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
-                _grassParticle.Play();
+                case WildRegion.WildeType.Grass:
+                    _playerSprite.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+                    _grassParticle.gameObject.SetActive(true);
+                    _grassParticle.Play();
+                    break;
+                case WildRegion.WildeType.Water:
+                    playerAnimator.SetLayerWeight(1,1);
+                    break;
+                case WildRegion.WildeType.Cave:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+            _UIController.SetBattleBackground(region.Background);
+            if (region.WildType != WildRegion.WildeType.Water)
+            {
+                playerAnimator.SetLayerWeight(0,1);
             }
             int number = _random.Next(0, encounterRate);
             if (number <= 1)
@@ -235,7 +237,11 @@ public class GridMovementController : MonoBehaviour
             }
         }
         else
+        {
+            playerAnimator.SetLayerWeight(1,0);
             _playerSprite.maskInteraction = SpriteMaskInteraction.None;
+            _grassParticle.gameObject.SetActive(false);
+        }
 
     }
 

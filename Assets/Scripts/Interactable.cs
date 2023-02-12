@@ -7,27 +7,39 @@ public class Interactable : MonoBehaviour
 {
     [SerializeField] private string[] _dialogText;
     [SerializeField] private interactableType _interactableType;
+    [SerializeField] private string _badgeCode;
+    [SerializeField] private int _badgeIndex;
     public enum interactableType
     {
         dialog,
         item,
         destructable,
-        input
+        input,
+        badge
     }
 
     public void TriggerInteraction()
     {
+        Debug.Log("Trigger action");
+
         switch (InteractableType)
         {
             case interactableType.dialog:
                 if (_dialogText.Length == 0) return;
-                    DialogController.Instance.OpenDialog(_dialogText);
+            {
+                Debug.Log("Dialog Pressed");
+                DialogController.Instance.OpenDialog(_dialogText);
+            }
                 break;
             case interactableType.item:
                 break;
             case interactableType.destructable:
                 if (_dialogText.Length == 0) return;
                     DialogController.Instance.OpenDialog(_dialogText);
+                break;
+            case interactableType.badge:
+                Debug.Log("Trigger BadgeDialog");
+                DialogController.Instance.OpenBadgeDialog(_dialogText,_badgeCode,_badgeIndex);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();

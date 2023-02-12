@@ -2867,7 +2867,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MapAtlas_02_132
+      name: Rock_02
       rect:
         serializedVersion: 2
         x: 675
@@ -3245,7 +3245,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MapAtlas_02_150
+      name: Rock_03
       rect:
         serializedVersion: 2
         x: 643
@@ -3266,11 +3266,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MapAtlas_02_151
+      name: Rock_01
       rect:
         serializedVersion: 2
         x: 675
-        y: 1641
+        y: 1642
         width: 20
         height: 16
       alignment: 0
@@ -8499,9 +8499,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 131
-        y: 493
-        width: 92
-        height: 158
+        y: 524
+        width: 52
+        height: 67
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -9272,13 +9272,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MapAtlas_02_437
+      name: Log_5
       rect:
         serializedVersion: 2
-        x: 155
-        y: 461
-        width: 66
-        height: 36
+        x: 188
+        y: 494
+        width: 33
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -9293,13 +9293,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MapAtlas_02_438
+      name: Shrooms_01
       rect:
         serializedVersion: 2
         x: 227
         y: 461
         width: 20
-        height: 50
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -9755,7 +9755,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MapAtlas_02_460
+      name: Log_02
       rect:
         serializedVersion: 2
         x: 187
@@ -9776,7 +9776,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MapAtlas_02_461
+      name: Log_03
       rect:
         serializedVersion: 2
         x: 227
@@ -10322,13 +10322,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MapAtlas_02_487
+      name: Log_01
       rect:
         serializedVersion: 2
-        x: 187
-        y: 237
-        width: 68
-        height: 92
+        x: 188
+        y: 270
+        width: 34
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -11582,7 +11582,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MapAtlas_02_547
+      name: Hoeve
       rect:
         serializedVersion: 2
         x: 2039
@@ -11854,6 +11854,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Log_04
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 494
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 552f843bdc3d6ec45abe92f31d926ba0
+      internalID: 2013847652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -11871,7 +11892,6 @@ TextureImporter:
       MapAtlas_02_162: -343994169
       MapAtlas_02_533: 1026611317
       MapAtlas_02_43: 55418157
-      MapAtlas_02_487: -879581433
       MapAtlas_02_7: -196925412
       MapAtlas_02_298: -439522909
       MapAtlas_02_332: 1984997931
@@ -11894,22 +11914,22 @@ TextureImporter:
       MapAtlas_02_42: -1724048159
       MapAtlas_02_335: -577217858
       MapAtlas_02_425: -738927636
+      Hoeve: -1938083402
       MapAtlas_02_443: 828368283
-      MapAtlas_02_413: 822224903
-      MapAtlas_02_51: -1353067272
-      MapAtlas_02_546: -1049475679
       MapAtlas_02_79: 1216983784
+      MapAtlas_02_372: 1989237930
+      MapAtlas_02_546: -1049475679
+      MapAtlas_02_413: 822224903
+      Rock_03: -460647900
       MapAtlas_02_224: 922888955
       MapAtlas_02_138: 1971860682
       MapAtlas_02_264: 1526004587
       MapAtlas_02_69: -1046876239
       MapAtlas_02_268: 431214050
-      MapAtlas_02_372: 1989237930
+      MapAtlas_02_51: -1353067272
       MapAtlas_02_271: 1523605486
       MapAtlas_02_491: 326364437
       MapAtlas_02_241: 1798616416
-      MapAtlas_02_461: 1260305277
-      MapAtlas_02_437: 1893035582
       MapAtlas_02_124: 262587809
       MapAtlas_02_284: -1395685747
       MapAtlas_02_304: 610330197
@@ -11938,6 +11958,7 @@ TextureImporter:
       MapAtlas_02_12: 1937431773
       MapAtlas_02_112: -1024301201
       MapAtlas_02_188: -1719870407
+      Rock_01: 1053719185
       MapAtlas_02_337: 1184556799
       MapAtlas_02_300: 1077857396
       MapAtlas_02_555: -579856136
@@ -11949,16 +11970,16 @@ TextureImporter:
       MapAtlas_02_486: 1694956750
       MapAtlas_02_87: 277351077
       MapAtlas_02_133: 428900412
-      MapAtlas_02_171: 1033736997
-      MapAtlas_02_237: -543977905
       MapAtlas_02_459: -1632226429
+      MapAtlas_02_237: -543977905
+      MapAtlas_02_171: 1033736997
+      MapAtlas_02_531: 1894246195
       MapAtlas_02_41: 643333382
       MapAtlas_02_435: 992004346
       MapAtlas_02_45: -1603748440
       MapAtlas_02_62: -1956702346
       MapAtlas_02_346: -373197125
       MapAtlas_02_446: -795144637
-      MapAtlas_02_531: 1894246195
       MapAtlas_02_242: 288130199
       MapAtlas_02_355: -376398229
       MapAtlas_02_447: 932193794
@@ -11980,6 +12001,7 @@ TextureImporter:
       MapAtlas_02_55: 940845849
       MapAtlas_02_381: -467016950
       MapAtlas_02_432: -632479617
+      Rock_02: -1453296073
       MapAtlas_02_420: 634435588
       MapAtlas_02_134: -1063903797
       House_Red_03: 1234852917
@@ -12030,6 +12052,7 @@ TextureImporter:
       MapAtlas_02_472: -754314000
       MapAtlas_02_97: 1519037885
       MapAtlas_02_266: 1281708432
+      Log_02: -204764900
       MapAtlas_02_545: 528314080
       MapAtlas_02_371: -606276951
       MapAtlas_02_37: 1683436909
@@ -12052,7 +12075,6 @@ TextureImporter:
       MapAtlas_02_422: -703003917
       MapAtlas_02_103: 296106079
       MapAtlas_02_183: -864604395
-      MapAtlas_02_132: -1453296073
       MapAtlas_02_311: -2037305811
       MapAtlas_02_429: -285097014
       MapAtlas_02_115: -179159628
@@ -12080,10 +12102,8 @@ TextureImporter:
       MapAtlas_02_198: -1500744412
       MapAtlas_02_25: -1639673208
       MapAtlas_02_338: -51014211
-      MapAtlas_02_460: -204764900
-      MapAtlas_02_136: -1590253646
       MapAtlas_02_496: -1378154707
-      MapAtlas_02_150: -460647900
+      MapAtlas_02_136: -1590253646
       MapAtlas_02_507: -2024938700
       MapAtlas_02_504: -1502665740
       MapAtlas_02_396: -1842436680
@@ -12138,7 +12158,6 @@ TextureImporter:
       MapAtlas_02_409: -1545205446
       MapAtlas_02_72: -1478056222
       MapAtlas_02_543: -1508539874
-      MapAtlas_02_547: -1938083402
       MapAtlas_02_44: 1928377130
       MapAtlas_02_389: 186252411
       MapAtlas_02_78: -546666311
@@ -12197,7 +12216,6 @@ TextureImporter:
       MapAtlas_02_331: -441582538
       MapAtlas_02_455: -756286025
       MapAtlas_02_305: 281299058
-      MapAtlas_02_151: 1053719185
       MapAtlas_02_345: 728099659
       MapAtlas_02_2: 57627989
       MapAtlas_02_558: 2125168328
@@ -12218,6 +12236,7 @@ TextureImporter:
       MapAtlas_02_517: -22563495
       MapAtlas_02_376: -103832773
       MapAtlas_02_525: 1983519374
+      Log_5: 1893035582
       MapAtlas_02_248: -1022188989
       MapAtlas_02_493: -1199646486
       MapAtlas_02_526: 1922287861
@@ -12276,6 +12295,7 @@ TextureImporter:
       MapAtlas_02_406: 1368046375
       MapAtlas_02_166: 923216381
       MapAtlas_02_513: 412009456
+      Log_03: 1260305277
       MapAtlas_02_125: -2084833868
       House_Red_02: -409383976
       MapAtlas_02_73: -1747694051
@@ -12285,6 +12305,7 @@ TextureImporter:
       MapAtlas_02_275: -2072119684
       MapAtlas_02_514: -1545885320
       MapAtlas_02_515: 1871424894
+      Shrooms_01: 892549526
       MapAtlas_02_523: 199168896
       MapAtlas_02_57: -1077615018
       MapAtlas_02_23: 1054031340
@@ -12323,7 +12344,6 @@ TextureImporter:
       MapAtlas_02_144: -629259463
       MapAtlas_02_267: -319605137
       MapAtlas_02_201: 388823097
-      MapAtlas_02_438: 892549526
       MapAtlas_02_13: 1596099284
       MapAtlas_02_297: 1209769737
       MapAtlas_02_367: -275990957
@@ -12367,6 +12387,7 @@ TextureImporter:
       MapAtlas_02_402: 1565828656
       MapAtlas_02_348: 620221625
       MapAtlas_02_101: 1598669016
+      Log_04: 2013847652
       MapAtlas_02_157: -962375473
       MapAtlas_02_106: 708710797
       MapAtlas_02_16: 866787146
@@ -12410,6 +12431,7 @@ TextureImporter:
       MapAtlas_02_454: 274302592
       MapAtlas_02_427: -2010885480
       MapAtlas_02_360: -546698826
+      Log_01: -879581433
       MapAtlas_02_165: 1669704101
       MapAtlas_02_127: 200541143
       MapAtlas_02_256: 1409965720

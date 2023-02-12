@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Pakomen;
 using TMPro;
@@ -16,6 +17,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject _pokedexUIShiny;
     [SerializeField] private Image _screenTransition;
     [SerializeField] private Image _pokemon;
+    [SerializeField] private SpriteRenderer _battleBG;
     [SerializeField] private Material _transition;
     [SerializeField] private TextMeshProUGUI _pokemonName;
     [SerializeField] private Animator _shiny;
@@ -92,6 +94,11 @@ public class UIController : MonoBehaviour
         BattleController.Instance.Escaped();
     }
 
+    public void SetBattleBackground(Sprite sprite)
+    {
+        _battleBG.sprite = sprite;
+    }
+
     public void CatchPokemon()
     {
         BattleController.Instance.Catch();
@@ -133,6 +140,7 @@ public class UIController : MonoBehaviour
             yield return null;
         }
         SetBattleButtons(true);
+        AudioManager.Instance.PlayPokemonSounds(_currentPokemon.PokeNumber1.ToString(),_currentPokemon.PokeNumber2.ToString());
         yield return null;
     }
 
@@ -174,9 +182,6 @@ public class UIController : MonoBehaviour
     {
         _runButton.interactable = isActive;
         _catchButton.interactable = isActive;
-        //Play pokemon animation and sounds
-        if (!isActive || _currentPokemon == null) return;
-        AudioManager.Instance.PlayPokemonSounds(_currentPokemon.PokeNumber1.ToString(),_currentPokemon.PokeNumber2.ToString());
     }
 
     public void PlayShiny()
