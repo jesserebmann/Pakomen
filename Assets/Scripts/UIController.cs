@@ -12,6 +12,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject _battleUI;
     [SerializeField] private GameObject _pokedexUI;
     [SerializeField] private GameObject _pokemonInfoUI;
+    [SerializeField] private GameObject _settingsUI;
     [SerializeField] private GameObject _pokemonPartyUI;
     [SerializeField] private GameObject _pokedexUIBase;
     [SerializeField] private GameObject _pokedexUIShiny;
@@ -153,6 +154,16 @@ public class UIController : MonoBehaviour
         _pokemonPartyUI.SetActive(false);
     }
     
+    public void OpenSettings()
+    {
+        _pokedexUI.SetActive(false);
+        _pokedexUIBase.SetActive(false);
+        _pokedexUIShiny.SetActive(false);
+        _pokemonInfoUI.SetActive(false);
+        _pokemonPartyUI.SetActive(false);
+        _settingsUI.SetActive(true);
+    }
+    
     public void OpenPokemonParty()
     {
         if(!PokemonPartyController.Instance._isInitialized)
@@ -242,7 +253,11 @@ public class UIController : MonoBehaviour
             DialogController.Instance.CloseDialog();
             return;
         }
-        
+    }
+    
+    public void HandleResetPlayer(int index)
+    {
+        ResetController.Instance.ResetPLayer(index);
     }
 
     #endregion Events

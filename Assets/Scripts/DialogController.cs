@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Pakomen;
 using TMPro;
@@ -76,7 +77,7 @@ public class DialogController : MonoBehaviour
 
     public void CheckBadgePass()
     {
-        if (_inputField.text == _passCode)
+        if (String.Equals(_inputField.text, _passCode, StringComparison.CurrentCultureIgnoreCase))
         {
             Debug.Log("Passed!");
             _inputField.gameObject.SetActive(false);

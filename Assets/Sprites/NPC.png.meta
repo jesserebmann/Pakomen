@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -3791,7 +3791,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPC_175
+      name: NPC_Grandpa_01
       rect:
         serializedVersion: 2
         x: 216
@@ -9617,6 +9617,7 @@ TextureImporter:
       NPC_416: 1904794740
       NPC_425: 749610265
       NPC_119: 1959509217
+      NPC_Grandpa_01: -902392960
       NPC_141: 1028311328
       NPC_432: -1940840537
       NPC_45: 352368351
@@ -9663,11 +9664,11 @@ TextureImporter:
       NPC_49: 418579496
       NPC_235: 466308894
       NPC_313: -839967813
-      NPC_250: 141806153
-      NPC_116: 991097163
-      NPC_54: -217683372
-      NPC_29: 504458928
       NPC_3: 116592586
+      NPC_54: -217683372
+      NPC_116: 991097163
+      NPC_250: 141806153
+      NPC_29: 504458928
       NPC_59: -1990487078
       NPC_244: -1521012683
       NPC_70: 1437273602
@@ -9793,7 +9794,6 @@ TextureImporter:
       NPC_411: -1003697111
       NPC_169: -680202896
       NPC_263: 1752842012
-      NPC_175: -902392960
       NPC_85: 1727937433
       NPC_204: 530991827
       NPC_47: 1722073734
