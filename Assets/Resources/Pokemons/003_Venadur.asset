@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 003_Venadur
   m_EditorClassIdentifier: 
   _name: Venadur
-  _description: 
+  _description: cook me
   _sprite: {fileID: 21300000, guid: 514b2a84d1f2f0943a27da051f6903af, type: 3}
   _shinySprite: {fileID: 21300000, guid: 1ca63ff0591f5d8409551a580e1b5dee, type: 3}
   _pokenumber1: 3

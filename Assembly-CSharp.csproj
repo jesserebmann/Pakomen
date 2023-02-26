@@ -47,6 +47,7 @@
      <Compile Include="Assets\Encoder\WaveFormat.cs" />
      <Compile Include="Assets\Encoder\CopyTo.cs" />
      <Compile Include="Assets\Scripts\EncounterManager.cs" />
+     <Compile Include="Assets\DialogEvents.cs" />
      <Compile Include="Assets\Scripts\SavWav.cs" />
      <Compile Include="Assets\Scripts\Pokemon\PokemonPartyItem.cs" />
      <Compile Include="Assets\Scripts\AudioManager.cs" />
@@ -888,6 +889,18 @@
      </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Unity.PlayerPrefsEditor.Samples.SampleScene.csproj">
+      <Project>{28911e88-9074-6f8a-6cc5-0bb93bd3b386}</Project>
+      <Name>Unity.PlayerPrefsEditor.Samples.SampleScene</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.PlayerPrefsEditor.EditorResources.csproj">
+      <Project>{1742a027-738f-684f-bbe0-11c9eaceef07}</Project>
+      <Name>Unity.PlayerPrefsEditor.EditorResources</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.PlayerPrefsEditor.Editor.csproj">
+      <Project>{aa224f1a-8d93-b62b-6046-770f6e8d2294}</Project>
+      <Name>Unity.PlayerPrefsEditor.Editor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7faaff3eb90c4eb41a83c2a388b65992, type: 3}
-  m_Name: 004_Chardar
+  m_Name: 005_Digleon
   m_EditorClassIdentifier: 
-  _name: Chardar
-  _description: Flamable bla
-  _sprite: {fileID: 21300000, guid: 514b2a84d1f2f0943a27da051f6903af, type: 3}
-  _shinySprite: {fileID: 21300000, guid: 1ca63ff0591f5d8409551a580e1b5dee, type: 3}
-  _pokenumber1: 3
-  _pokenumber2: 175
+  _name: Digleon
+  _description: Charsdsfsffs
+  _sprite: {fileID: 21300000, guid: ba0342cb55eb4a342bf057d6361c5da0, type: 3}
+  _shinySprite: {fileID: 21300000, guid: 0f9a6ae578fc6df4a9540ede7808eb4f, type: 3}
+  _pokenumber1: 5
+  _pokenumber2: 50
   _SpriteOffset: -33
   _type1: 4
-  _type2: 7
-  _nature: 2
+  _type2: 9
+  _nature: 1

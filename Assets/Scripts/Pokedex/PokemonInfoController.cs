@@ -13,6 +13,7 @@ public class PokemonInfoController : MonoBehaviour
     [SerializeField] private Image _type2;
     [SerializeField] private TextMeshProUGUI _nature;
     [SerializeField] private TextMeshProUGUI _name;
+    [SerializeField] private TextMeshProUGUI _description;
     [SerializeField] private List<Sprite> _typeSprites;
 
     public static PokemonInfoController Instance;
@@ -42,8 +43,12 @@ public class PokemonInfoController : MonoBehaviour
             _pokemonThumb.sprite = isShiny ? pokemonResource.ShinySprite : pokemonResource.DefaultSprite;
             var test = _types[pokemonResource.Type1.ToString()];
             var test2 = _types[pokemonResource.Type2.ToString()];
+            _type1.sprite = test;
+            _type2.sprite = test2;
             _name.text = pokemonResource.PokemonName;
             _isShiny = isShiny;
+            _description.SetText(pokemonResource.Description);
+            _nature.SetText(pokemonResource.Nature.ToString());
             //_type1 = pokemonResource.Type1;
             //_pokemonThumb.sprite = (isShiny) ? pokemonData.
     }

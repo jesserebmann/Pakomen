@@ -11,6 +11,7 @@ public class BadgeManager : MonoBehaviour
     private static BadgeManager _badgeManager;
     private int _badge01,_badge02,_badge03,_badge04,_badge05,_badge06,_badge07,_badge08;
     public GameObject _badge01Rubble;
+    public GameObject _badge02Snorlax;
     public bool _resetBadges;
 
     private List<int> _badgesCompleted;
@@ -76,7 +77,8 @@ public class BadgeManager : MonoBehaviour
                 break;
             case 2:
                 PlayerPrefs.SetInt("badge02",1);
-
+                if(_badge02Snorlax)
+                    _badge02Snorlax.SetActive(false);
                 break;
             case 3:
                 PlayerPrefs.SetInt("badge03",1);

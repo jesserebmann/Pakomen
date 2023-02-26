@@ -1,21 +1,41 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Pakomen;
 using UnityEngine;
+using UnityEngine.Events;
+using Random = System.Random;
 
 public class Interactable : MonoBehaviour
 {
     [SerializeField] private string[] _dialogText;
     [SerializeField] private interactableType _interactableType;
     [SerializeField] private string _badgeCode;
+    [SerializeField] private AudioClip _audio;
     [SerializeField] private int _badgeIndex;
+    [SerializeField] private string _pokemonPropertyName;
+    [SerializeField] private PokemonBase _encounterPokemon;
+    [SerializeField] private WildRegion _encounterRegion;
+    [SerializeField] private UnityEvent _dialogEvent;
     public enum interactableType
     {
         dialog,
         item,
         destructable,
         input,
-        badge
+        badge,
+        encounter,
+        dialogAudio,
+        dialogEvent
+    }
+
+    public void Start()
+    {
+        if (_encounterPokemon)
+        {
+            if (PlayerPrefs.GetInt(_pokemonPropertyName) == 1)
+                gameObject.SetActive(false);
+        }
     }
 
     public void TriggerInteraction()
@@ -31,6 +51,21 @@ public class Interactable : MonoBehaviour
                 DialogController.Instance.OpenDialog(_dialogText);
             }
                 break;
+            case interactableType.dialogAudio:
+                if (_dialogText.Length == 0) return;
+            {
+                Debug.Log("Dialog Pressed");
+                DialogController.Instance.OpenDialogAudio(_dialogText,_audio);
+            }
+                break;
+            case interactableType.dialogEvent:
+                if (_dialogText.Length == 0) return;
+            {
+                Debug.Log("Dialog Pressed");
+                DialogController.Instance.OpenDialog(_dialogText);
+            }
+                _dialogEvent.Invoke();
+                break;
             case interactableType.item:
                 break;
             case interactableType.destructable:
@@ -41,11 +76,28 @@ public class Interactable : MonoBehaviour
                 Debug.Log("Trigger BadgeDialog");
                 DialogController.Instance.OpenBadgeDialog(_dialogText,_badgeCode,_badgeIndex);
                 break;
+            case interactableType.encounter:
+                Encounter(_encounterPokemon, _encounterRegion);
+                PlayerPrefs.SetInt(_pokemonPropertyName,1);
+                break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
     }
 
+        
+    private void Encounter(PokemonBase pokemon,WildRegion region)
+    {
+        gameObject.SetActive(false);
+        Random _random = new Random();
+        UIController.Instance.SetBattleBackground(region.Background);
+        var isShiny = _random.Next(0, 20) == 1;
+        //Debug.Log(pokemonEncounter.name);
+        UIController.Instance.StartEncounter(pokemon,isShiny);
+        AudioManager.Instance.Pause();
+        AudioManager.Instance.PlayEncounterAudio();
+            
+    }
     public string[] DialogText => _dialogText;
     public interactableType InteractableType => _interactableType;
 }

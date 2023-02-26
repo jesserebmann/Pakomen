@@ -94,6 +94,10 @@ public class PokedexController : MonoBehaviour
             var shinyPok = Instantiate(_pokedexPakomenBlueprint, _pokedexShinyList);
             var data = PlayerPrefs.GetString($"{pokemon.PokemonName}");
             var pokemonData = JsonUtility.FromJson<pokedexPokemon>(data);
+            if (pokemonData == null)
+            {
+                PlayerPrefs.SetString($"{pokemonData.pokemonName}",JsonUtility.ToJson(pokemonData));
+            }
             _pokemonDictionary.Add(pokemonData.pokemonName,pokemon);
             _basePokemonList.Add(pokemonData.pokemonName,basePok);
             _shinyPokemonList.Add(pokemonData.pokemonName,shinyPok);

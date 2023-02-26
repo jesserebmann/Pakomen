@@ -246,11 +246,11 @@ public class GridMovementController : MonoBehaviour
             _playerSprite.maskInteraction = SpriteMaskInteraction.None;
             _grassParticle.gameObject.SetActive(false);
         }
-
     }
 
 
-    private bool CheckMovementBlock(Vector2 targetPos)
+
+        private bool CheckMovementBlock(Vector2 targetPos)
     {
         var isBlockedByStatic = Physics2D.OverlapCircle(targetPos, blockRadius, movementBlock);
         if (isBlockedByStatic)

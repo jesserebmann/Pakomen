@@ -15,9 +15,12 @@ MonoBehaviour:
   name: First Region
   EncounterListCommon:
   - _pokemon: {fileID: 11400000, guid: 783630d56065b344ebf3e16bc07b0260, type: 2}
+  - _pokemon: {fileID: 11400000, guid: a6898981333ffff419ea04929f832935, type: 2}
   EncounterListUncommon:
   - _pokemon: {fileID: 11400000, guid: 5790d9542d5822641b16fc4c49e657d6, type: 2}
+  - _pokemon: {fileID: 11400000, guid: bc6783c066be7f64ea81616cc72bd63d, type: 2}
   EncounterListRare:
   - _pokemon: {fileID: 11400000, guid: 9d22b0e00e55d0645b9f59e9037cb1c1, type: 2}
+  - _pokemon: {fileID: 11400000, guid: ea42b013d216f7f4192f413920124396, type: 2}
   EncounterListLucky:
   - _pokemon: {fileID: 11400000, guid: 9d22b0e00e55d0645b9f59e9037cb1c1, type: 2}

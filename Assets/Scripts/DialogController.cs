@@ -13,11 +13,13 @@ public class DialogController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _dialogText;
     [SerializeField] private TMP_InputField _inputField;
     [SerializeField] private AudioSource _dialogSound;
+    [SerializeField] private AudioSource _dialogAudio;
     private static  DialogController _instance;
     private string[] _textQueue;
     private int _counter;
     private string _passCode;
     private bool _isBadge;
+    private bool _isDialogAudio;
     private int _badgeIndex;
 
     private bool _dialogInProgress = false;
@@ -35,6 +37,16 @@ public class DialogController : MonoBehaviour
         _textQueue = texts;
         _counter = 0;
         OpenDialog(_textQueue[_counter]);
+    }
+    
+    public void OpenDialogAudio(string[] texts,AudioClip audioClip)
+    {
+        _textQueue = texts;
+        _counter = 0;
+        OpenDialog(_textQueue[_counter]);
+        _dialogAudio.clip = audioClip;
+        AudioManager.Instance.Pause();
+        _dialogAudio.Play();
     }
     
     public void OpenDialog(string[] texts)
@@ -67,12 +79,14 @@ public class DialogController : MonoBehaviour
         {
             _inputField.gameObject.SetActive(true);
             _dialogText.gameObject.SetActive(false);
+            _dialogAudio.Stop();
             return;
         }
         _dialogUI.SetActive(false);
         _textQueue = null;
         _counter = 0;
         IsOpen = false;
+        _dialogAudio.Stop();
     }
 
     public void CheckBadgePass()
