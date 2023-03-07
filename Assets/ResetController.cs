@@ -10,8 +10,8 @@ public class ResetController : MonoBehaviour
     [SerializeField] private Transform _player;
     [SerializeField] private GameObject _entei;
     private static  ResetController _instance;
-    
-    
+
+
     public void Start()
     {
         _instance = this;

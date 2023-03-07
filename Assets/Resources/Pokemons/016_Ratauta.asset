@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7faaff3eb90c4eb41a83c2a388b65992, type: 3}
+  m_Name: 016_Ratauta
+  m_EditorClassIdentifier: 
+  _name: Ratauta
+  _description: Just keeps popping up
+  _sprite: {fileID: 21300000, guid: 7243d68341f86a046926ce529dfdd1db, type: 3}
+  _shinySprite: {fileID: 21300000, guid: 86746a45738b6af4e867441d8ddeb82c, type: 3}
+  _pokenumber1: 19
+  _pokenumber2: 128
+  _SpriteOffset: -33
+  _type1: 2
+  _type2: 0
+  _nature: 4

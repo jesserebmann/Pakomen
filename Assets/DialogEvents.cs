@@ -8,4 +8,9 @@ public class DialogEvents : MonoBehaviour
     {
         
     }
+
+    public void EnableObject(GameObject go)
+    {
+        go.SetActive(true);
+    }
 }

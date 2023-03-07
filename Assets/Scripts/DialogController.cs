@@ -4,6 +4,7 @@ using Pakomen;
 using TMPro;
 using UnityEditor.Experimental;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class DialogController : MonoBehaviour
@@ -15,6 +16,8 @@ public class DialogController : MonoBehaviour
     [SerializeField] private AudioSource _dialogSound;
     [SerializeField] private AudioSource _dialogAudio;
     private static  DialogController _instance;
+    private UnityEvent _closeEvent;
+    private UnityEvent _completeEvent;
     private string[] _textQueue;
     private int _counter;
     private string _passCode;
@@ -39,6 +42,17 @@ public class DialogController : MonoBehaviour
         OpenDialog(_textQueue[_counter]);
     }
     
+    public void OpenBadgeDialog(string[] texts, string passcode,int badgeIndex, UnityEvent completeEvent)
+    {
+        _completeEvent = completeEvent;
+        _isBadge = true;
+        _badgeIndex = badgeIndex;
+        _passCode = passcode;
+        _textQueue = texts;
+        _counter = 0;
+        OpenDialog(_textQueue[_counter]);
+    }
+    
     public void OpenDialogAudio(string[] texts,AudioClip audioClip)
     {
         _textQueue = texts;
@@ -51,6 +65,14 @@ public class DialogController : MonoBehaviour
     
     public void OpenDialog(string[] texts)
     {
+        _textQueue = texts;
+        _counter = 0;
+        OpenDialog(_textQueue[_counter]);
+    }
+    
+    public void OpenDialog(string[] texts, UnityEvent closeEvent)
+    {
+        _closeEvent = closeEvent;
         _textQueue = texts;
         _counter = 0;
         OpenDialog(_textQueue[_counter]);
@@ -82,11 +104,19 @@ public class DialogController : MonoBehaviour
             _dialogAudio.Stop();
             return;
         }
+
+        if (_closeEvent != null)
+        {
+            _closeEvent.Invoke();
+            _closeEvent = null;
+        }
+
         _dialogUI.SetActive(false);
         _textQueue = null;
         _counter = 0;
         IsOpen = false;
         _dialogAudio.Stop();
+        AudioManager.Instance.Resume();
     }
 
     public void CheckBadgePass()
@@ -100,6 +130,9 @@ public class DialogController : MonoBehaviour
             _dialogText.gameObject.SetActive(true);
             BadgeManager.Instance.SetBadgeComplete(_badgeIndex);
             _badgeIndex = 0;
+            if (_completeEvent == null) return;
+            _completeEvent.Invoke();
+            _completeEvent = null;
         }
         else
         {
