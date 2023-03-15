@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7faaff3eb90c4eb41a83c2a388b65992, type: 3}
+  m_Name: 039_Swankey
+  m_EditorClassIdentifier: 
+  _name: Swankey
+  _description: Full of weird diseases.Disposing it might be the best option.
+  _sprite: {fileID: 21300000, guid: 384200878d64190469b61fa6883912e9, type: 3}
+  _shinySprite: {fileID: 21300000, guid: 27d3776f090512f4898fc08d87b66644, type: 3}
+  _pokenumber1: 24
+  _pokenumber2: 220
+  _SpriteOffset: -33
+  _type1: 8
+  _type2: 0
+  _nature: 1
