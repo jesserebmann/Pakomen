@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Pikapod
   _description: Charsdsfsffs
-  _sprite: {fileID: 21300000, guid: a60618f9ebfab024c91ab02ef7388343, type: 3}
-  _shinySprite: {fileID: 21300000, guid: e60dfc95c3106334ab1fe43c7e5bfe93, type: 3}
+  _sprite: {fileID: 21300000, guid: 785f7924e9584f241b6a3db0e77bed84, type: 3}
+  _shinySprite: {fileID: 21300000, guid: 36b2a7ed623ceac4299de4dfa1f9d025, type: 3}
   _pokenumber1: 11
   _pokenumber2: 25
   _SpriteOffset: -33
-  _type1: 4
-  _type2: 9
+  _type1: 12
+  _type2: 6
   _nature: 1

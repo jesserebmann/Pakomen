@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7faaff3eb90c4eb41a83c2a388b65992, type: 3}
   m_Name: 047_Kadalts
   m_EditorClassIdentifier: 
-  _name: Ariabok
+  _name: Kadalts
   _description: Full of weird diseases.Disposing it might be the best option.
   _sprite: {fileID: 21300000, guid: f7368ed8c0931724ea5908a9a91dfc56, type: 3}
   _shinySprite: {fileID: 21300000, guid: 1e88f316913cae84ca3619b8a1019692, type: 3}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7faaff3eb90c4eb41a83c2a388b65992, type: 3}
   m_Name: 027_Hootbat
   m_EditorClassIdentifier: 
-  _name: 027_Hootbat
+  _name: Hootbat
   _description: Full of weird diseases.Disposing it might be the best option.
   _sprite: {fileID: 21300000, guid: bf73114c4cf482a4aa4ba212b0792369, type: 3}
   _shinySprite: {fileID: 21300000, guid: 3569973ecb1335b498f6cc7ab386bfa3, type: 3}

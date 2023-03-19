@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7faaff3eb90c4eb41a83c2a388b65992, type: 3}
+  m_Name: 070_Jycutor
+  m_EditorClassIdentifier: 
+  _name: Jycutor
+  _description: Full of weird diseases.Disposing it might be the best option.
+  _sprite: {fileID: 21300000, guid: a3fd9fff8da9f5e449a8a3384882202a, type: 3}
+  _shinySprite: {fileID: 21300000, guid: f27179355be453b4fb29a04266fb7963, type: 3}
+  _pokenumber1: 103
+  _pokenumber2: 124
+  _SpriteOffset: -33
+  _type1: 3
+  _type2: 11
+  _nature: 1

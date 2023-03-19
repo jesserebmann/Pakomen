@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Cruelninja
   _description: Full of weird diseases.Disposing it might be the best option.
-  _sprite: {fileID: 21300000, guid: 792a786f4cf46304faad751d27fae405, type: 3}
-  _shinySprite: {fileID: 21300000, guid: d33c8f5520d8b134c9810400f039bcae, type: 3}
+  _sprite: {fileID: 21300000, guid: c0ef2a11506d0b14fa6c94d496c2cd4f, type: 3}
+  _shinySprite: {fileID: 21300000, guid: 02fa0773c99b21842ab90a0a0fea5605, type: 3}
   _pokenumber1: 73
   _pokenumber2: 291
   _SpriteOffset: -33

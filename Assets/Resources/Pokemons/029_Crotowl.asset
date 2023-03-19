@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7faaff3eb90c4eb41a83c2a388b65992, type: 3}
   m_Name: 029_Crotowl
   m_EditorClassIdentifier: 
-  _name: Ariabok
+  _name: Crotowl
   _description: Full of weird diseases.Disposing it might be the best option.
   _sprite: {fileID: 21300000, guid: 6370729bbb618a54a91ed0d88a76b213, type: 3}
   _shinySprite: {fileID: 21300000, guid: c8c87208874a9ba4ab0737a3db9ea023, type: 3}

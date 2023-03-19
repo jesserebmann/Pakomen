@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Tencacool
   _description: Full of weird diseases.Disposing it might be the best option.
-  _sprite: {fileID: 21300000, guid: 792a786f4cf46304faad751d27fae405, type: 3}
-  _shinySprite: {fileID: 21300000, guid: d33c8f5520d8b134c9810400f039bcae, type: 3}
+  _sprite: {fileID: 21300000, guid: 9437da698f7193d45893916911416bd8, type: 3}
+  _shinySprite: {fileID: 21300000, guid: 87ed65a0f7ad776409a4da58deee1a65, type: 3}
   _pokenumber1: 72
   _pokenumber2: 290
   _SpriteOffset: -33

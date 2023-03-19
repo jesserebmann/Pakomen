@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7faaff3eb90c4eb41a83c2a388b65992, type: 3}
   m_Name: 046_Rabra
   m_EditorClassIdentifier: 
-  _name: Ariabok
+  _name: Rabra
   _description: Full of weird diseases.Disposing it might be the best option.
   _sprite: {fileID: 21300000, guid: 88c53c71230b67f4abe34d04ed9b76c1, type: 3}
   _shinySprite: {fileID: 21300000, guid: 5ee04afaa3a0e8b4f9c647849baa59ab, type: 3}
