@@ -114,6 +114,18 @@ public class Interactable : MonoBehaviour
         UIController.Instance.StartEncounter(_encounterPokemon,isShiny);
         AudioManager.Instance.PlayEncounterAudio();
     }
+    
+    public void Encounter()
+    {
+        AudioManager.Instance.Pause();
+        gameObject.SetActive(false);
+        Random _random = new Random();
+        UIController.Instance.SetBattleBackground(_encounterRegion.Background);
+        var isShiny = _random.Next(0, 20) == 1;
+        //Debug.Log(pokemonEncounter.name);
+        UIController.Instance.StartEncounter(_encounterPokemon,isShiny);
+        AudioManager.Instance.PlayEncounterAudio();
+    }
 
 
     private void Encounter(PokemonBase pokemon,WildRegion region)

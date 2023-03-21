@@ -85,6 +85,7 @@ public class AudioManager : MonoBehaviour
 
     public void Pause()
     {
+        if (!_currentAudioSource) return;
         _currentAudioSource.Pause();
     }
 
