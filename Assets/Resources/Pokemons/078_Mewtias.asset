@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7faaff3eb90c4eb41a83c2a388b65992, type: 3}
+  m_Name: 078_Mewtias
+  m_EditorClassIdentifier: 
+  _name: Mewtias
+  _description: It might be the most powerful out there.. But is it?
+  _sprite: {fileID: 21300000, guid: a1bffe281ef8fb246bc478fa82e14587, type: 3}
+  _shinySprite: {fileID: 21300000, guid: 106a987674dde3f4297edd0d7f193906, type: 3}
+  _pokenumber1: 150
+  _pokenumber2: 380
+  _SpriteOffset: -33
+  _type1: 15
+  _type2: 11
+  _nature: 1

@@ -9,6 +9,7 @@ public class ResetController : MonoBehaviour
 
     [SerializeField] private Transform _player;
     [SerializeField] private GameObject _entei;
+    [SerializeField] private Vector3[] ResetPoints;
     private static  ResetController _instance;
 
 
@@ -36,25 +37,25 @@ public class ResetController : MonoBehaviour
         switch (index)
         {
             case 0 :
-                _player.SetPositionAndRotation(Vector3.zero, quaternion.identity);
+                _player.SetPositionAndRotation(ResetPoints[0], quaternion.identity);
                 break;
             case 1 :
-                _player.SetPositionAndRotation(new Vector3(14,15,0), quaternion.identity);
+                _player.SetPositionAndRotation(ResetPoints[1], quaternion.identity);
                 break;
             case 2 :
-                _player.SetPositionAndRotation(new Vector3(14,15,0), quaternion.identity);
+                _player.SetPositionAndRotation(ResetPoints[2], quaternion.identity);
                 break;
             case 3 :
-                _player.SetPositionAndRotation(new Vector3(14,15,0), quaternion.identity);
+                _player.SetPositionAndRotation(ResetPoints[3], quaternion.identity);
                 break;
             case 4 :
-                _player.SetPositionAndRotation(new Vector3(14,15,0), quaternion.identity);
+                _player.SetPositionAndRotation(ResetPoints[4], quaternion.identity);
                 break;
             case 5 :
-                _player.SetPositionAndRotation(new Vector3(14,15,0), quaternion.identity);
+                _player.SetPositionAndRotation(ResetPoints[5], quaternion.identity);
                 break;
             case 6 : // Entei
-                _player.SetPositionAndRotation(new Vector3(-12,12.5f,0), quaternion.identity);
+                _player.SetPositionAndRotation(ResetPoints[6], quaternion.identity);
                 break;
         }
         PlayerPrefs.SetInt("positionX",Convert.ToInt16(_player.position.x*10));

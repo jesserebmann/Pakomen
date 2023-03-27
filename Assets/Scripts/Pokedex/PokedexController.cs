@@ -88,6 +88,7 @@ public class PokedexController : MonoBehaviour
 
     public void PopulatePokedex()
     {
+        string pokelist = "";
         foreach (var pokemon in _pokemons)
         {
             var basePok = Instantiate(_pokedexPakomenBlueprint,_pokedexBaseList);
@@ -98,6 +99,8 @@ public class PokedexController : MonoBehaviour
             {
                 PlayerPrefs.SetString($"{pokemonData.pokemonName}",JsonUtility.ToJson(pokemonData));
             }
+
+            pokelist += pokemonData.pokemonName +";";
             _pokemonDictionary.Add(pokemonData.pokemonName,pokemon);
             _basePokemonList.Add(pokemonData.pokemonName,basePok);
             _shinyPokemonList.Add(pokemonData.pokemonName,shinyPok);
@@ -126,6 +129,7 @@ public class PokedexController : MonoBehaviour
                 shinyPok.PokemonName.SetText(pokemon.name);  
             }
         }
+        Debug.Log(pokelist);
     }
 
     public Sprite GetPokemonSprite(string Name, bool isShiny)
