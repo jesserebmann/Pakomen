@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 044_Poopwhirl
   m_EditorClassIdentifier: 
   _name: Poopwhirl
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: Another one to be flushed
   _sprite: {fileID: 21300000, guid: 7795597ba8803f24181e48014a01cebe, type: 3}
   _shinySprite: {fileID: 21300000, guid: dabcea7f954fbfa46beae123dcded1b0, type: 3}
   _pokenumber1: 61
   _pokenumber2: 194
-  _SpriteOffset: -33
+  _SpriteOffset: -44
   _type1: 5
   _type2: 0
   _nature: 1

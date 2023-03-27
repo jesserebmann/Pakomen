@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 032_Paraplu
   m_EditorClassIdentifier: 
   _name: Paraplu
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: It is not a paraplu, but it is, you know what I mean
   _sprite: {fileID: 21300000, guid: 36f34d6b2ae180d4bab8bf2f76732c2e, type: 3}
   _shinySprite: {fileID: 21300000, guid: 05d9ebc447463c44ebfaf16cada37c72, type: 3}
   _pokenumber1: 24
   _pokenumber2: 168
-  _SpriteOffset: -33
+  _SpriteOffset: -35
   _type1: 1
   _type2: 12
   _nature: 1

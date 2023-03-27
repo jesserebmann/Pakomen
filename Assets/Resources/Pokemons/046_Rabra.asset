@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 046_Rabra
   m_EditorClassIdentifier: 
   _name: Rabra
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: An empty doll..?
   _sprite: {fileID: 21300000, guid: 88c53c71230b67f4abe34d04ed9b76c1, type: 3}
   _shinySprite: {fileID: 21300000, guid: 5ee04afaa3a0e8b4f9c647849baa59ab, type: 3}
   _pokenumber1: 24
   _pokenumber2: 280
-  _SpriteOffset: -33
+  _SpriteOffset: -52
   _type1: 11
-  _type2: 0
+  _type2: 17
   _nature: 1

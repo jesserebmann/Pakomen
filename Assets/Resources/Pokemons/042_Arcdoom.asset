@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 042_Arcdoom
   m_EditorClassIdentifier: 
   _name: Arcdoom
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: Fiery dog, will bite your ass off.
   _sprite: {fileID: 21300000, guid: 0da00516e793dcc47bf825da865ec297, type: 3}
   _shinySprite: {fileID: 21300000, guid: 2d1fdb075f8da4449a10561cd5eebea2, type: 3}
   _pokenumber1: 24
   _pokenumber2: 168
-  _SpriteOffset: -33
+  _SpriteOffset: -13
   _type1: 4
   _type2: 0
   _nature: 1

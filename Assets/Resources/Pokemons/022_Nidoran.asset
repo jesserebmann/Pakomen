@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 022_Nidoran
   m_EditorClassIdentifier: 
   _name: Nidoran
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: Gender is not a thing?
   _sprite: {fileID: 21300000, guid: b771937c87925584d853721e1f4a98d4, type: 3}
   _shinySprite: {fileID: 21300000, guid: 3df2e35ec009b9649a4df5751fcb0f54, type: 3}
   _pokenumber1: 29
   _pokenumber2: 32
-  _SpriteOffset: -33
+  _SpriteOffset: -46
   _type1: 1
   _type2: 9
   _nature: 1

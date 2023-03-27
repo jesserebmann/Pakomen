@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 005_Digleon
   m_EditorClassIdentifier: 
   _name: Digleon
-  _description: Charsdsfsffs
+  _description: Ready for a the big evolve
   _sprite: {fileID: 21300000, guid: ba0342cb55eb4a342bf057d6361c5da0, type: 3}
   _shinySprite: {fileID: 21300000, guid: 0f9a6ae578fc6df4a9540ede7808eb4f, type: 3}
   _pokenumber1: 5

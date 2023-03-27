@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 045_Quagwrath
   m_EditorClassIdentifier: 
   _name: Quagwrath
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: Jimbei?
   _sprite: {fileID: 21300000, guid: 6f4d2e32eb4848e4885a6651b93e2d82, type: 3}
   _shinySprite: {fileID: 21300000, guid: d9359a1691d40ed4cada460145248f63, type: 3}
   _pokenumber1: 62
   _pokenumber2: 195
-  _SpriteOffset: -33
+  _SpriteOffset: -22
   _type1: 5
   _type2: 9
   _nature: 1

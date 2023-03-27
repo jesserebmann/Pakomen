@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 031_Paroom
   m_EditorClassIdentifier: 
   _name: Paroom
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: Are those faces on it's head?
   _sprite: {fileID: 21300000, guid: 544729df902e7004d8e1ffd9af22d4d6, type: 3}
   _shinySprite: {fileID: 21300000, guid: b769742aefde1244b941027b7ca9713c, type: 3}
   _pokenumber1: 24
   _pokenumber2: 44
-  _SpriteOffset: -33
+  _SpriteOffset: -43
   _type1: 1
   _type2: 12
   _nature: 1

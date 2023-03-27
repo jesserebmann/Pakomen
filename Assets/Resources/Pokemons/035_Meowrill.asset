@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 035_Meowrill
   m_EditorClassIdentifier: 
   _name: Meowrill
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: Aaaw
   _sprite: {fileID: 21300000, guid: 5825a739f84be44488642ca7e3b474f5, type: 3}
   _shinySprite: {fileID: 21300000, guid: 5c33513e8a3c7ad43b530847995ca24f, type: 3}
   _pokenumber1: 52
   _pokenumber2: 183
-  _SpriteOffset: -33
+  _SpriteOffset: -38
   _type1: 2
   _type2: 0
   _nature: 1

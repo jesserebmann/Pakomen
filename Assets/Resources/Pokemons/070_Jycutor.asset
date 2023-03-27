@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 070_Jycutor
   m_EditorClassIdentifier: 
   _name: Jycutor
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: I don't know..
   _sprite: {fileID: 21300000, guid: a3fd9fff8da9f5e449a8a3384882202a, type: 3}
   _shinySprite: {fileID: 21300000, guid: f27179355be453b4fb29a04266fb7963, type: 3}
   _pokenumber1: 103
   _pokenumber2: 124
-  _SpriteOffset: -33
+  _SpriteOffset: -17
   _type1: 3
   _type2: 11
   _nature: 1

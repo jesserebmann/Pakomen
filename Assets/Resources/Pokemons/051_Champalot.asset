@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 051_Champalot
   m_EditorClassIdentifier: 
   _name: Champalot
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: He will smack you like a fish.
   _sprite: {fileID: 21300000, guid: 86d70654033ef5b4b88f38c62421553d, type: 3}
   _shinySprite: {fileID: 21300000, guid: e37b8c418044a7d4187746b118d9aaca, type: 3}
   _pokenumber1: 24
   _pokenumber2: 317
-  _SpriteOffset: -33
+  _SpriteOffset: -18
   _type1: 8
   _type2: 1
   _nature: 1

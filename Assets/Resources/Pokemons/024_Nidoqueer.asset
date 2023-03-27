@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 024_Nidoqueer
   m_EditorClassIdentifier: 
   _name: Nidoqueer
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: Okay that whole gender thing.. Does not mix up for the better i seems
   _sprite: {fileID: 21300000, guid: 39e670691761bd24e8b9ce3978cd0c39, type: 3}
   _shinySprite: {fileID: 21300000, guid: 2f13e98d28aa5834b80610e0bce82b3c, type: 3}
   _pokenumber1: 31
   _pokenumber2: 34
-  _SpriteOffset: -33
+  _SpriteOffset: -27
   _type1: 1
   _type2: 9
   _nature: 1

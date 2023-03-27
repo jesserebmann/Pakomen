@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 064_Shellhana
   m_EditorClassIdentifier: 
   _name: Shellhana
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: Agressive little fish
   _sprite: {fileID: 21300000, guid: 1e27f809516b4774b9b938257e7efe7e, type: 3}
   _shinySprite: {fileID: 21300000, guid: a5220fffb3d022c4e9c2fe2765fe14fb, type: 3}
   _pokenumber1: 80
   _pokenumber2: 318
-  _SpriteOffset: -33
+  _SpriteOffset: -52
   _type1: 5
   _type2: 0
   _nature: 1

@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 053_Skippinbell
   m_EditorClassIdentifier: 
   _name: Skippinbell
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: You can eat this one with skin and all
   _sprite: {fileID: 21300000, guid: 2ed55708be6721b4cb3a7ced09629f1f, type: 3}
   _shinySprite: {fileID: 21300000, guid: f0b7d479e21a9aa4b968b21482babc5f, type: 3}
   _pokenumber1: 70
   _pokenumber2: 188
-  _SpriteOffset: -33
+  _SpriteOffset: -52
   _type1: 3
   _type2: 1
   _nature: 1

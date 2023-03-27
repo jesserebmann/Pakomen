@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 008_Wartulba
   m_EditorClassIdentifier: 
   _name: Wartulba
-  _description: Charsdsfsffs
+  _description: Okay?
   _sprite: {fileID: 21300000, guid: 12df4e3eeec73a741b9fcc348ebf5b91, type: 3}
   _shinySprite: {fileID: 21300000, guid: 946d4ee3e4cb7054483a07d62354575b, type: 3}
   _pokenumber1: 6
   _pokenumber2: 51
-  _SpriteOffset: -33
+  _SpriteOffset: -30
   _type1: 5
   _type2: 0
   _nature: 1

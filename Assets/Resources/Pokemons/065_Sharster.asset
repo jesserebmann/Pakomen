@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 065_Sharster
   m_EditorClassIdentifier: 
   _name: Sharster
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: That thing wants your blood
   _sprite: {fileID: 21300000, guid: 582923d905936184d927c99fc8d199ea, type: 3}
   _shinySprite: {fileID: 21300000, guid: 3fddcd09e89fc834e915b81568205ef5, type: 3}
   _pokenumber1: 81
   _pokenumber2: 319
-  _SpriteOffset: -33
+  _SpriteOffset: -20
   _type1: 5
   _type2: 0
   _nature: 1

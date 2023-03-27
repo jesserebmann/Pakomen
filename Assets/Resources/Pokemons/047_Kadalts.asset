@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 047_Kadalts
   m_EditorClassIdentifier: 
   _name: Kadalts
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: Looks like a mindbender
   _sprite: {fileID: 21300000, guid: f7368ed8c0931724ea5908a9a91dfc56, type: 3}
   _shinySprite: {fileID: 21300000, guid: 1e88f316913cae84ca3619b8a1019692, type: 3}
   _pokenumber1: 24
   _pokenumber2: 168
-  _SpriteOffset: -33
+  _SpriteOffset: -36
   _type1: 11
-  _type2: 0
+  _type2: 17
   _nature: 1

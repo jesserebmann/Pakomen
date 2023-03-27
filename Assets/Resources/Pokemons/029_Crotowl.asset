@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 029_Crotowl
   m_EditorClassIdentifier: 
   _name: Crotowl
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: A creature of the night
   _sprite: {fileID: 21300000, guid: 6370729bbb618a54a91ed0d88a76b213, type: 3}
   _shinySprite: {fileID: 21300000, guid: c8c87208874a9ba4ab0737a3db9ea023, type: 3}
   _pokenumber1: 43
   _pokenumber2: 164
-  _SpriteOffset: -33
+  _SpriteOffset: -26
   _type1: 1
   _type2: 10
   _nature: 1

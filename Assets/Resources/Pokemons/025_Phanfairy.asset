@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 025_Phanfairy
   m_EditorClassIdentifier: 
   _name: Phanfairy
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: Not all creation is intended
   _sprite: {fileID: 21300000, guid: 13868904b02301446ab533ad840b1ee7, type: 3}
   _shinySprite: {fileID: 21300000, guid: 8fe1e5959b3ecec4bbb3d330c62b10a4, type: 3}
   _pokenumber1: 35
   _pokenumber2: 231
-  _SpriteOffset: -33
+  _SpriteOffset: -35
   _type1: 17
   _type2: 9
   _nature: 1

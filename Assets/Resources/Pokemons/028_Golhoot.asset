@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 028_Golhoot
   m_EditorClassIdentifier: 
   _name: Golhoot
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: Big flying owlbat?
   _sprite: {fileID: 21300000, guid: 2a207823239cc4a4e8606e730c4dfe6c, type: 3}
   _shinySprite: {fileID: 21300000, guid: 1c01daaf762d8944988be23d3e86cdbe, type: 3}
   _pokenumber1: 42
   _pokenumber2: 163
-  _SpriteOffset: -33
+  _SpriteOffset: -30
   _type1: 1
   _type2: 10
   _nature: 1

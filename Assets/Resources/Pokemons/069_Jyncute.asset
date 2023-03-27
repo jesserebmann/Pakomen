@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 069_Jyncute
   m_EditorClassIdentifier: 
   _name: Jyncute
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: It has cute in it's name. Don't ask
   _sprite: {fileID: 21300000, guid: b9a9022ed140bbc4db3f524efa870339, type: 3}
   _shinySprite: {fileID: 21300000, guid: d3e9c115841298e43a96ea6904821627, type: 3}
   _pokenumber1: 102
   _pokenumber2: 124
-  _SpriteOffset: -33
+  _SpriteOffset: -60
   _type1: 3
   _type2: 11
   _nature: 1

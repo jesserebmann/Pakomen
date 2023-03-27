@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 011_Pikapod
   m_EditorClassIdentifier: 
   _name: Pikapod
-  _description: Charsdsfsffs
+  _description: I guess it can be cute?
   _sprite: {fileID: 21300000, guid: 785f7924e9584f241b6a3db0e77bed84, type: 3}
   _shinySprite: {fileID: 21300000, guid: 36b2a7ed623ceac4299de4dfa1f9d025, type: 3}
   _pokenumber1: 11
   _pokenumber2: 25
-  _SpriteOffset: -33
+  _SpriteOffset: -51
   _type1: 12
   _type2: 6
   _nature: 1

@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 062_Slownaut
   m_EditorClassIdentifier: 
   _name: Slownaut
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: Isn't he cute?
   _sprite: {fileID: 21300000, guid: d9b68618c9e981547b80da402abbf630, type: 3}
   _shinySprite: {fileID: 21300000, guid: f8a913ec7db8fe54593b8b31eac399d0, type: 3}
   _pokenumber1: 79
   _pokenumber2: 360
-  _SpriteOffset: -33
+  _SpriteOffset: -47
   _type1: 5
   _type2: 11
   _nature: 1

@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 049_Gulchop
   m_EditorClassIdentifier: 
   _name: Gulchop
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: We all start from somewhere
   _sprite: {fileID: 21300000, guid: 8b40da175072f5e4ea1b25de84344489, type: 3}
   _shinySprite: {fileID: 21300000, guid: caef8a7fe86d232438ff4468370d71ac, type: 3}
   _pokenumber1: 66
   _pokenumber2: 316
-  _SpriteOffset: -33
+  _SpriteOffset: -41
   _type1: 8
   _type2: 1
   _nature: 1

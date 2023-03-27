@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 012_Butterchu
   m_EditorClassIdentifier: 
   _name: Butterchu
-  _description: Charsdsfsffs
+  _description: What the..
   _sprite: {fileID: 21300000, guid: 4f90a9953b26e2b4ca8d023f7bcd6863, type: 3}
   _shinySprite: {fileID: 21300000, guid: bd3494e6bf5c8e047949bd778fd0f0ca, type: 3}
   _pokenumber1: 12
   _pokenumber2: 26
-  _SpriteOffset: -33
+  _SpriteOffset: 3
   _type1: 12
   _type2: 6
   _nature: 1

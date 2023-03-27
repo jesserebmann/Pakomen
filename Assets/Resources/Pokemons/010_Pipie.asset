@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 010_Pipie
   m_EditorClassIdentifier: 
   _name: Pipie
-  _description: Charsdsfsffs
+  _description: Yeah I'd catch this one too
   _sprite: {fileID: 21300000, guid: bf8fbd28cfe578a4eb3b73e9776ea394, type: 3}
   _shinySprite: {fileID: 21300000, guid: 237af3c61d331e3498d26ea4afedd833, type: 3}
   _pokenumber1: 10
   _pokenumber2: 24
-  _SpriteOffset: -33
+  _SpriteOffset: -46
   _type1: 12
   _type2: 6
   _nature: 1

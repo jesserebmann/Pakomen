@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 034_Dugtress
   m_EditorClassIdentifier: 
   _name: Dugtress
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: These ground sausages are up to no good.
   _sprite: {fileID: 21300000, guid: 88e3558c903d8944080bb5be474edc91, type: 3}
   _shinySprite: {fileID: 21300000, guid: 8d2d83c865e5d65478db2c84c5397f95, type: 3}
   _pokenumber1: 51
   _pokenumber2: 168
-  _SpriteOffset: -33
+  _SpriteOffset: -49
   _type1: 9
   _type2: 12
   _nature: 1

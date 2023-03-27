@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 015_Grangeot
   m_EditorClassIdentifier: 
   _name: Grangeot
-  _description: Charsdsfsffs
+  _description: What in the heavens
   _sprite: {fileID: 21300000, guid: d90564fc5922c1c43afb816c057a3936, type: 3}
   _shinySprite: {fileID: 21300000, guid: edc14f4ea4a936a49a0aa42b117d4311, type: 3}
   _pokenumber1: 18
   _pokenumber2: 210
-  _SpriteOffset: -33
+  _SpriteOffset: -32
   _type1: 2
   _type2: 17
   _nature: 1

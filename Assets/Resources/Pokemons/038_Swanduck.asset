@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 038_Swanduck
   m_EditorClassIdentifier: 
   _name: Swanduck
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: Those tiny feet
   _sprite: {fileID: 21300000, guid: f72b78c5b6c7b98499a799e277c12f13, type: 3}
   _shinySprite: {fileID: 21300000, guid: 5fb56ecd91c59cd4a9e54ada631e9141, type: 3}
   _pokenumber1: 55
   _pokenumber2: 581
-  _SpriteOffset: -33
+  _SpriteOffset: -26
   _type1: 5
   _type2: 0
   _nature: 1

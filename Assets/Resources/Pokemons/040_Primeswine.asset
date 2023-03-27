@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 040_Primeswine
   m_EditorClassIdentifier: 
   _name: Primeswine
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: Blind kung-fu swine
   _sprite: {fileID: 21300000, guid: fdc30b596c3d3af4da46b7ba47c02645, type: 3}
   _shinySprite: {fileID: 21300000, guid: b6539632efd79ef4ab7d67d734751d42, type: 3}
   _pokenumber1: 24

@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 066_Gasmur
   m_EditorClassIdentifier: 
   _name: Gasmur
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: I think you'll like this one
   _sprite: {fileID: 21300000, guid: 05d5fc02b829b534e8380932b28d0cd4, type: 3}
   _shinySprite: {fileID: 21300000, guid: e855189d013b4d84491b53039d2ad43d, type: 3}
   _pokenumber1: 92
   _pokenumber2: 293
-  _SpriteOffset: -33
+  _SpriteOffset: -14
   _type1: 14
   _type2: 1
   _nature: 1

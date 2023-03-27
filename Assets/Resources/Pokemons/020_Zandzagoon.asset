@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 020_Zandzagoon
   m_EditorClassIdentifier: 
   _name: Zandzagoon
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: He can dig some serious holes..
   _sprite: {fileID: 21300000, guid: 524e2346505c6954ea0cb85c4b3a54a8, type: 3}
   _shinySprite: {fileID: 21300000, guid: 189bada73d2bcc2459607edc0c81dfb8, type: 3}
   _pokenumber1: 27
   _pokenumber2: 263
-  _SpriteOffset: -33
+  _SpriteOffset: -46
   _type1: 9
   _type2: 0
   _nature: 1

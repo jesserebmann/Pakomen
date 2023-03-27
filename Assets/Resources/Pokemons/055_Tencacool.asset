@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 055_Tencacool
   m_EditorClassIdentifier: 
   _name: Tencacool
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: Another creature of the sea, Cool.
   _sprite: {fileID: 21300000, guid: 9437da698f7193d45893916911416bd8, type: 3}
   _shinySprite: {fileID: 21300000, guid: 87ed65a0f7ad776409a4da58deee1a65, type: 3}
   _pokenumber1: 72
   _pokenumber2: 290
-  _SpriteOffset: -33
+  _SpriteOffset: -18
   _type1: 5
   _type2: 12
   _nature: 1

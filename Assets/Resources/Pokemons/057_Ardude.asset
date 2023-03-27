@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 057_Ardude
   m_EditorClassIdentifier: 
   _name: Ardude
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: This one will do you a solid.
   _sprite: {fileID: 21300000, guid: 41a39bb73a1ee1d4eb76facac3bb65fb, type: 3}
   _shinySprite: {fileID: 21300000, guid: ea75dff5f6a4bc04c99620acd2d2b464, type: 3}
   _pokenumber1: 74
   _pokenumber2: 304
-  _SpriteOffset: -33
+  _SpriteOffset: -51
   _type1: 9
   _type2: 18
   _nature: 1

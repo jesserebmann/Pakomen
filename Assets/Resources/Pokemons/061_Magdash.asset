@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 061_Magdash
   m_EditorClassIdentifier: 
   _name: Magdash
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: Don't touch his chin testicles, it is sensitive they say
   _sprite: {fileID: 21300000, guid: 66b19d35bd88bb8489cba83ec75decf9, type: 3}
   _shinySprite: {fileID: 21300000, guid: f6ab7d67d2e5322499ae0e0ea4ff7155, type: 3}
   _pokenumber1: 78
   _pokenumber2: 219
-  _SpriteOffset: -33
+  _SpriteOffset: -19
   _type1: 4
   _type2: 0
   _nature: 1

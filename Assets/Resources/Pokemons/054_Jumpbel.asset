@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 054_Jumpbel
   m_EditorClassIdentifier: 
   _name: Jumpbel
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: Looks tasty, cut it up already
   _sprite: {fileID: 21300000, guid: 79119574fd3d0d041b626408da5cac67, type: 3}
   _shinySprite: {fileID: 21300000, guid: ab26774ad6017bc4886df7f7adda610e, type: 3}
   _pokenumber1: 71
   _pokenumber2: 189
-  _SpriteOffset: -33
+  _SpriteOffset: -41
   _type1: 3
   _type2: 1
   _nature: 1

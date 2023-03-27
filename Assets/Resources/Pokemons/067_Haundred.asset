@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 067_Haundred
   m_EditorClassIdentifier: 
   _name: Haundred
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: It was up the line, couldn't help it..
   _sprite: {fileID: 21300000, guid: 6d5e21d280c31fd4982c6992398f9cf7, type: 3}
   _shinySprite: {fileID: 21300000, guid: ba0a4fcd6a8c125489b06c99408059fa, type: 3}
   _pokenumber1: 93
   _pokenumber2: 294
-  _SpriteOffset: -33
+  _SpriteOffset: -30
   _type1: 14
   _type2: 1
   _nature: 1

@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 019_Ariabok
   m_EditorClassIdentifier: 
   _name: Ariabok
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: Would not step on that
   _sprite: {fileID: 21300000, guid: 792a786f4cf46304faad751d27fae405, type: 3}
   _shinySprite: {fileID: 21300000, guid: d33c8f5520d8b134c9810400f039bcae, type: 3}
   _pokenumber1: 24
   _pokenumber2: 168
-  _SpriteOffset: -33
+  _SpriteOffset: -11
   _type1: 1
   _type2: 12
   _nature: 1

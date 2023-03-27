@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 027_Hootbat
   m_EditorClassIdentifier: 
   _name: Hootbat
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: You can't step next to these
   _sprite: {fileID: 21300000, guid: bf73114c4cf482a4aa4ba212b0792369, type: 3}
   _shinySprite: {fileID: 21300000, guid: 3569973ecb1335b498f6cc7ab386bfa3, type: 3}
   _pokenumber1: 41
   _pokenumber2: 163
-  _SpriteOffset: -33
+  _SpriteOffset: -6
   _type1: 1
   _type2: 10
   _nature: 1

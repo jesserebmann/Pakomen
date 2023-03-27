@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 023_Nidorin
   m_EditorClassIdentifier: 
   _name: Nidorin
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: I guess you can't see the difference between genders
   _sprite: {fileID: 21300000, guid: 2c9891e4b271feb4d9ed320c1258b1ce, type: 3}
   _shinySprite: {fileID: 21300000, guid: 12d2c3e82929f074eab3d8a64c362678, type: 3}
   _pokenumber1: 30
   _pokenumber2: 33
-  _SpriteOffset: -33
+  _SpriteOffset: -46
   _type1: 1
   _type2: 9
   _nature: 1

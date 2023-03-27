@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 037_Duckduck
   m_EditorClassIdentifier: 
   _name: Duckduck
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: Cute duck
   _sprite: {fileID: 21300000, guid: 3b0ecde70f4b97845bd122cdbef55084, type: 3}
   _shinySprite: {fileID: 21300000, guid: 9181c735a52be1f4eae01797b5dd0c37, type: 3}
   _pokenumber1: 54
   _pokenumber2: 580
-  _SpriteOffset: -33
+  _SpriteOffset: -44
   _type1: 5
   _type2: 0
   _nature: 1

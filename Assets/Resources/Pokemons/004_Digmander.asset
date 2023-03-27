@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 004_Digmander
   m_EditorClassIdentifier: 
   _name: Digmander
-  _description: Flamable bla
+  _description: Flamable little thing
   _sprite: {fileID: 21300000, guid: 5e97f97c307d6e245bb23cb7b9912b4d, type: 3}
   _shinySprite: {fileID: 21300000, guid: fd968e7611fad8a44beda80f8de73341, type: 3}
   _pokenumber1: 4
   _pokenumber2: 50
-  _SpriteOffset: -33
+  _SpriteOffset: -41
   _type1: 4
   _type2: 9
   _nature: 2

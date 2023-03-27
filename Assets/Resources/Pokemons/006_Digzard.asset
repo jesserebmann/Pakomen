@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 006_Digzard
   m_EditorClassIdentifier: 
   _name: Digzard
-  _description: Charsdsfsffs
+  _description: Almost looked like a favorite pokemon
   _sprite: {fileID: 21300000, guid: a60618f9ebfab024c91ab02ef7388343, type: 3}
   _shinySprite: {fileID: 21300000, guid: e60dfc95c3106334ab1fe43c7e5bfe93, type: 3}
   _pokenumber1: 6
   _pokenumber2: 51
-  _SpriteOffset: -33
+  _SpriteOffset: -6
   _type1: 4
   _type2: 9
   _nature: 1

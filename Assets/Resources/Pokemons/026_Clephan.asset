@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 026_Clephan
   m_EditorClassIdentifier: 
   _name: Clephan
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: Ready for that beauty contest
   _sprite: {fileID: 21300000, guid: 47c257dac64f1aa4e9f92772df60e4d7, type: 3}
   _shinySprite: {fileID: 21300000, guid: 75ac2a53089dc09448678f844ba90d1d, type: 3}
   _pokenumber1: 36
   _pokenumber2: 232
-  _SpriteOffset: -33
+  _SpriteOffset: -26
   _type1: 17
   _type2: 9
   _nature: 1

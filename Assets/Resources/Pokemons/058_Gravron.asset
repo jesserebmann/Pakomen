@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 058_Gravron
   m_EditorClassIdentifier: 
   _name: Gravron
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: Not easy to get through
   _sprite: {fileID: 21300000, guid: 8e415e0f914645047aaec169655b688a, type: 3}
   _shinySprite: {fileID: 21300000, guid: 34b575342a90a7b4a8d466fa8b8dff40, type: 3}
   _pokenumber1: 75
   _pokenumber2: 304
-  _SpriteOffset: -33
+  _SpriteOffset: -43
   _type1: 9
   _type2: 18
   _nature: 1

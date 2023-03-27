@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 001_Burbadur
   m_EditorClassIdentifier: 
   _name: Burbadur
-  _description: 
+  _description: Not the brightest tool
   _sprite: {fileID: 21300000, guid: 1fa835a2193cea04a981b0babc7c39e1, type: 3}
   _shinySprite: {fileID: 21300000, guid: 5e6c5813d7e68e6479ca04881ce95494, type: 3}
   _pokenumber1: 1

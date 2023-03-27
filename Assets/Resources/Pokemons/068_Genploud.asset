@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 068_Genploud
   m_EditorClassIdentifier: 
   _name: Genploud
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: I am sorry..
   _sprite: {fileID: 21300000, guid: 808b89c61c6d46f43bee0a6ac7f653e2, type: 3}
   _shinySprite: {fileID: 21300000, guid: 319f30ab17566304aaec1b1f05b9fe6e, type: 3}
   _pokenumber1: 94
   _pokenumber2: 295
-  _SpriteOffset: -33
+  _SpriteOffset: -22
   _type1: 14
   _type2: 1
   _nature: 1

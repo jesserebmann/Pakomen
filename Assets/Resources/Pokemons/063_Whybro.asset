@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 063_Whybro
   m_EditorClassIdentifier: 
   _name: Whybro
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: Just Whybro
   _sprite: {fileID: 21300000, guid: 36406de0c0530f64aa0a95500e370135, type: 3}
   _shinySprite: {fileID: 21300000, guid: fa96e5d1d406949459d66f290fe7737f, type: 3}
   _pokenumber1: 80
   _pokenumber2: 360
-  _SpriteOffset: -33
+  _SpriteOffset: -23
   _type1: 5
   _type2: 11
   _nature: 1

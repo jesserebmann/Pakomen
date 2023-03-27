@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 007_Squirtyba
   m_EditorClassIdentifier: 
   _name: Squirtyba
-  _description: Charsdsfsffs
+  _description: Some odd turtle
   _sprite: {fileID: 21300000, guid: 4abab3baf3309024e87e6fbc5f13bf62, type: 3}
   _shinySprite: {fileID: 21300000, guid: d48d6c8b81aad3246ad0301c404a6fe3, type: 3}
   _pokenumber1: 6
   _pokenumber2: 51
-  _SpriteOffset: -33
+  _SpriteOffset: -44
   _type1: 5
   _type2: 0
   _nature: 1

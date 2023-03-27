@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 030_Paddish
   m_EditorClassIdentifier: 
   _name: Paddish
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: Walks around in the garden
   _sprite: {fileID: 21300000, guid: 3ba3e9f980970254a9cd07b1e51371e6, type: 3}
   _shinySprite: {fileID: 21300000, guid: 13d4fdbd80a3d2446b08a2408675a21d, type: 3}
   _pokenumber1: 46
   _pokenumber2: 43
-  _SpriteOffset: -33
+  _SpriteOffset: -51
   _type1: 1
   _type2: 12
   _nature: 1

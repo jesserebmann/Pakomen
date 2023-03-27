@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 009_Blastian
   m_EditorClassIdentifier: 
   _name: Blastian
-  _description: Charsdsfsffs
+  _description: Jezus..
   _sprite: {fileID: 21300000, guid: b230c5f796ec87c41a12d7ce86b9574a, type: 3}
   _shinySprite: {fileID: 21300000, guid: b7d5b64fd71f10649920da6e602fc94f, type: 3}
   _pokenumber1: 6
   _pokenumber2: 51
-  _SpriteOffset: -33
+  _SpriteOffset: -6
   _type1: 5
   _type2: 0
   _nature: 1

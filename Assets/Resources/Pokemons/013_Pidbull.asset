@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 013_Pidbull
   m_EditorClassIdentifier: 
   _name: Pidbull
-  _description: Charsdsfsffs
+  _description: Just another one that poops
   _sprite: {fileID: 21300000, guid: e829a196fdf142f4a98bb95b3bbb026d, type: 3}
   _shinySprite: {fileID: 21300000, guid: d9d52b3e8312d3343b34cc93abaeff3b, type: 3}
   _pokenumber1: 16
   _pokenumber2: 209
-  _SpriteOffset: -33
+  _SpriteOffset: -49
   _type1: 2
   _type2: 17
   _nature: 1

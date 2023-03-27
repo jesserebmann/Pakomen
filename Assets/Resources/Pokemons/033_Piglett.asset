@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 033_Piglett
   m_EditorClassIdentifier: 
   _name: Piglett
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: What a weird frog
   _sprite: {fileID: 21300000, guid: d51a6eff7f7ed904c90e815b13f3a102, type: 3}
   _shinySprite: {fileID: 21300000, guid: 3f4846613db5aaa4c8399ef7015b5b02, type: 3}
   _pokenumber1: 50

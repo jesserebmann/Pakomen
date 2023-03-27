@@ -18,7 +18,7 @@ MonoBehaviour:
   _shinySprite: {fileID: 21300000, guid: 5474cfe7faf4d9e48a7dd8dbb2640e6f, type: 3}
   _pokenumber1: 244
   _pokenumber2: 201
-  _SpriteOffset: -33
+  _SpriteOffset: -24
   _type1: 4
   _type2: 14
   _nature: 4

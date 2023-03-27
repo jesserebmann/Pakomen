@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 048_Alavoir
   m_EditorClassIdentifier: 
   _name: Alavoir
-  _description: Full of weird diseases.Disposing it might be the best option.
+  _description: What in the magical beings is that?
   _sprite: {fileID: 21300000, guid: 5d6123b5d59722142b2ae0856ff640dc, type: 3}
   _shinySprite: {fileID: 21300000, guid: be62bad229094794ba20fd1401caf57d, type: 3}
   _pokenumber1: 24
   _pokenumber2: 168
-  _SpriteOffset: -33
+  _SpriteOffset: -13
   _type1: 11
-  _type2: 0
+  _type2: 17
   _nature: 1
