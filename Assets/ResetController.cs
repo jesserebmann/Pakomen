@@ -9,6 +9,7 @@ public class ResetController : MonoBehaviour
 
     [SerializeField] private Transform _player;
     [SerializeField] private GameObject _entei;
+    [SerializeField] public GameObject[] _points;
     [SerializeField] private Vector3[] ResetPoints;
     private static  ResetController _instance;
 
@@ -19,6 +20,24 @@ public class ResetController : MonoBehaviour
         var entei = PlayerPrefs.GetInt($"entei");
         if(entei == 1)
             EnableEntei();
+        var point1 = PlayerPrefs.GetInt($"point1");
+        if(point1 == 1)
+            _points[0].SetActive(true);
+        var point2 = PlayerPrefs.GetInt($"point2");
+        if(point2 == 1)
+            _points[1].SetActive(true);
+        var point3 = PlayerPrefs.GetInt($"point3");
+        if(point3 == 1)
+            _points[2].SetActive(true);
+        var point4 = PlayerPrefs.GetInt($"point4");
+        if(point4 == 1)
+            _points[3].SetActive(true);
+        var point5 = PlayerPrefs.GetInt($"point5");
+        if(point5 == 1)
+            _points[4].SetActive(true);
+        var point6 = PlayerPrefs.GetInt($"point6");
+        if(point6 == 1)
+            _points[5].SetActive(true);
     }
 
     public void EnableEntei()

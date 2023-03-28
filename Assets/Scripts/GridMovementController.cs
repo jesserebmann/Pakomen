@@ -35,6 +35,7 @@ public class GridMovementController : MonoBehaviour
     public LayerMask actionLayer;
     public LayerMask encounterLayer;
     public LayerMask audioLayer;
+    public LayerMask teleportUnlockLayer;
     public LayerMask waterLayer;
     public Vector2 yourPosition;
     private Transform _begintransform;
@@ -197,6 +198,8 @@ public class GridMovementController : MonoBehaviour
         CheckForEncounters();
         var audioAreaItem = Physics2D.OverlapCircle(transform.position, blockRadius, audioLayer)?.GetComponent<AreaSound>();
         if(audioAreaItem != null) AudioManager.Instance.UpdateAreaAudio(audioAreaItem);
+        var teleportUnlock = Physics2D.OverlapCircle(transform.position, blockRadius, teleportUnlockLayer)?.GetComponent<TeleportUnlocker>();
+        if(teleportUnlock != null) teleportUnlock.UnlockTeleportPoint();
         yield return null;
     }
 
