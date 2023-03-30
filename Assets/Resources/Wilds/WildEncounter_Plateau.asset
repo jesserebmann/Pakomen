@@ -14,10 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Plateau
   EncounterListCommon:
-  - _pokemon: {fileID: 11400000, guid: 783630d56065b344ebf3e16bc07b0260, type: 2}
+  - _pokemon: {fileID: 11400000, guid: c1ef5b8637b31f9428d4983eff5b2baa, type: 2}
+  - _pokemon: {fileID: 11400000, guid: 35156a218c2cea549b54322bec9428a2, type: 2}
+  - _pokemon: {fileID: 11400000, guid: 9e1c98888c3186443a455c8f27f60864, type: 2}
   EncounterListUncommon:
-  - _pokemon: {fileID: 11400000, guid: 5790d9542d5822641b16fc4c49e657d6, type: 2}
+  - _pokemon: {fileID: 11400000, guid: fdbc178f784c9a042aeebbe17b74dcc4, type: 2}
+  - _pokemon: {fileID: 11400000, guid: 2d497a463e19db9448f9688758a4c86d, type: 2}
+  - _pokemon: {fileID: 11400000, guid: 6ccefbebaed1fbe4199ad68f570b489f, type: 2}
   EncounterListRare:
-  - _pokemon: {fileID: 11400000, guid: 9d22b0e00e55d0645b9f59e9037cb1c1, type: 2}
+  - _pokemon: {fileID: 11400000, guid: d9936afd5d6d27745887e3320f331e06, type: 2}
+  - _pokemon: {fileID: 11400000, guid: fb2b868fbe6b0eb4cab1edaff9db6948, type: 2}
   EncounterListLucky:
-  - _pokemon: {fileID: 11400000, guid: 9d22b0e00e55d0645b9f59e9037cb1c1, type: 2}
+  - _pokemon: {fileID: 11400000, guid: fb2b868fbe6b0eb4cab1edaff9db6948, type: 2}

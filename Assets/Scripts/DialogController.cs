@@ -108,7 +108,6 @@ public class DialogController : MonoBehaviour
         if (_closeEvent != null)
         {
             _closeEvent.Invoke();
-            _closeEvent = null;
         }
 
         _dialogUI.SetActive(false);
@@ -116,7 +115,10 @@ public class DialogController : MonoBehaviour
         _counter = 0;
         IsOpen = false;
         _dialogAudio.Stop();
-        AudioManager.Instance.Resume();
+        if (_closeEvent == null)AudioManager.Instance.Resume();
+        else
+            _closeEvent = null;
+        
     }
 
     public void CheckBadgePass()

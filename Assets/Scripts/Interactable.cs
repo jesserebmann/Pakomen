@@ -18,6 +18,7 @@ public class Interactable : MonoBehaviour
     [SerializeField] private WildRegion _encounterRegion;
     [SerializeField] private UnityEvent _dialogEvent;
     [SerializeField] private UnityEvent _completeEvent;
+    [SerializeField] private bool _isNPCEncountPerson;
 
     public enum interactableType
     {
@@ -78,7 +79,7 @@ public class Interactable : MonoBehaviour
                 Debug.Log("Dialog Pressed");
                 DialogController.Instance.OpenDialog(_dialogText, _dialogEvent);
             }
-                _dialogEvent.Invoke();
+                //_dialogEvent.Invoke();
                 break;
             case interactableType.item:
                 break;
@@ -118,10 +119,10 @@ public class Interactable : MonoBehaviour
     public void Encounter()
     {
         AudioManager.Instance.Pause();
-        gameObject.SetActive(false);
+        if(!_isNPCEncountPerson)gameObject.SetActive(false);
         Random _random = new Random();
         UIController.Instance.SetBattleBackground(_encounterRegion.Background);
-        var isShiny = _random.Next(0, 20) == 1;
+        var isShiny = _random.Next(0, 30) < 2;
         //Debug.Log(pokemonEncounter.name);
         UIController.Instance.StartEncounter(_encounterPokemon,isShiny);
         AudioManager.Instance.PlayEncounterAudio();

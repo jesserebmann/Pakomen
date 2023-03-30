@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36fc82e58c4242d4982cb48635c239ce, type: 3}
+  m_Name: WildEncounter_Theclimb
+  m_EditorClassIdentifier: 
+  name: TheClimb
+  EncounterListCommon:
+  - _pokemon: {fileID: 11400000, guid: 9ac44558ab20e9546a82b47dba072f98, type: 2}
+  - _pokemon: {fileID: 11400000, guid: a6898981333ffff419ea04929f832935, type: 2}
+  - _pokemon: {fileID: 11400000, guid: 612e40b508f790a4eb917084f9016d42, type: 2}
+  EncounterListUncommon:
+  - _pokemon: {fileID: 11400000, guid: 58864137d076d984e9728ee171dfb3c1, type: 2}
+  - _pokemon: {fileID: 11400000, guid: bc6783c066be7f64ea81616cc72bd63d, type: 2}
+  - _pokemon: {fileID: 11400000, guid: dab0bf6dc173ccc4e8a72dd88bfa97b7, type: 2}
+  EncounterListRare:
+  - _pokemon: {fileID: 11400000, guid: ea42b013d216f7f4192f413920124396, type: 2}
+  - _pokemon: {fileID: 11400000, guid: dab0bf6dc173ccc4e8a72dd88bfa97b7, type: 2}
+  EncounterListLucky:
+  - _pokemon: {fileID: 11400000, guid: ea42b013d216f7f4192f413920124396, type: 2}

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36fc82e58c4242d4982cb48635c239ce, type: 3}
+  m_Name: WildEncounter_Sea
+  m_EditorClassIdentifier: 
+  name: Sea
+  EncounterListCommon:
+  - _pokemon: {fileID: 11400000, guid: 8d8dab7736404e74f84d2de1eff75ce7, type: 2}
+  - _pokemon: {fileID: 11400000, guid: a9f540538ca308541b5f667bcf4e736e, type: 2}
+  - _pokemon: {fileID: 11400000, guid: dca722303773bb545ac6ecc0c420bed5, type: 2}
+  EncounterListUncommon:
+  - _pokemon: {fileID: 11400000, guid: 6a12527e4e9e35846a7ccd1198be03a6, type: 2}
+  - _pokemon: {fileID: 11400000, guid: 59f61d87ff33487408f855c162def066, type: 2}
+  - _pokemon: {fileID: 11400000, guid: dca722303773bb545ac6ecc0c420bed5, type: 2}
+  - _pokemon: {fileID: 11400000, guid: 3cd275541472f9a43a7c533dc3600a24, type: 2}
+  EncounterListRare:
+  - _pokemon: {fileID: 11400000, guid: 3b6c0d7a6fc746d47948e3f04b8585bd, type: 2}
+  - _pokemon: {fileID: 11400000, guid: c66090cd20c95b94986458ade3ea6b9c, type: 2}
+  EncounterListLucky:
+  - _pokemon: {fileID: 11400000, guid: c66090cd20c95b94986458ade3ea6b9c, type: 2}

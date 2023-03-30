@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36fc82e58c4242d4982cb48635c239ce, type: 3}
+  m_Name: WildEncounter_MazeRock
+  m_EditorClassIdentifier: 
+  name: RockMaze
+  EncounterListCommon:
+  - _pokemon: {fileID: 11400000, guid: 111854da774bc1247a1b024cfd5f8390, type: 2}
+  - _pokemon: {fileID: 11400000, guid: 429e3540d27ca334e97b3ac99ddd0d71, type: 2}
+  - _pokemon: {fileID: 11400000, guid: 35156a218c2cea549b54322bec9428a2, type: 2}
+  EncounterListUncommon:
+  - _pokemon: {fileID: 11400000, guid: e1c47d69972340a4da16a21e5abe47d9, type: 2}
+  - _pokemon: {fileID: 11400000, guid: 68185f740b2b9884a925a02a7c7a5465, type: 2}
+  - _pokemon: {fileID: 11400000, guid: 2d497a463e19db9448f9688758a4c86d, type: 2}
+  EncounterListRare:
+  - _pokemon: {fileID: 11400000, guid: b82a2cc984798b24389502bf1f768be6, type: 2}
+  - _pokemon: {fileID: 11400000, guid: d9936afd5d6d27745887e3320f331e06, type: 2}
+  EncounterListLucky:
+  - _pokemon: {fileID: 11400000, guid: b82a2cc984798b24389502bf1f768be6, type: 2}
