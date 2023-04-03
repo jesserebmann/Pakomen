@@ -42,9 +42,17 @@ public class PokemonInfoController : MonoBehaviour
             var pokemonResource = PokedexController.Instance.PokemonBaseList[name];
             _pokemonThumb.sprite = isShiny ? pokemonResource.ShinySprite : pokemonResource.DefaultSprite;
             var test = _types[pokemonResource.Type1.ToString()];
-            var test2 = _types[pokemonResource.Type2.ToString()];
+            if (pokemonResource.Type2 != PokemonBase.PokemonType.None)
+            {
+                var test2 = _types[pokemonResource.Type2.ToString()];
+                _type2.sprite = test2;
+            }
+            else
+            {
+                var test2 = _types["Normal"];
+                _type2.sprite = test2;
+            }
             _type1.sprite = test;
-            _type2.sprite = test2;
             _name.text = pokemonResource.PokemonName;
             _isShiny = isShiny;
             _description.SetText(pokemonResource.Description);
