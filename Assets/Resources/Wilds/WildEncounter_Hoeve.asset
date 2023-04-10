@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36fc82e58c4242d4982cb48635c239ce, type: 3}
   m_Name: WildEncounter_Hoeve
   m_EditorClassIdentifier: 
-  name: TheClimb
+  name: Hoeve
   EncounterListCommon:
-  - _pokemon: {fileID: 11400000, guid: a6898981333ffff419ea04929f832935, type: 2}
-  - _pokemon: {fileID: 11400000, guid: 612e40b508f790a4eb917084f9016d42, type: 2}
-  EncounterListUncommon:
-  - _pokemon: {fileID: 11400000, guid: bc6783c066be7f64ea81616cc72bd63d, type: 2}
   - _pokemon: {fileID: 11400000, guid: c40df965822053341a815989969345b6, type: 2}
+  - _pokemon: {fileID: 11400000, guid: fad313a47c362dc419074752f9b9a953, type: 2}
+  EncounterListUncommon:
+  - _pokemon: {fileID: 11400000, guid: 3a33492c5e524f246afe1f9af8422da8, type: 2}
   EncounterListRare:
-  - _pokemon: {fileID: 11400000, guid: ea42b013d216f7f4192f413920124396, type: 2}
   - _pokemon: {fileID: 11400000, guid: 22ce562996058ff46a1bad153c669f5f, type: 2}
+  - _pokemon: {fileID: 11400000, guid: 5388265b7d06a87449c94851d54c2cba, type: 2}
   EncounterListLucky:
   - _pokemon: {fileID: 11400000, guid: 22ce562996058ff46a1bad153c669f5f, type: 2}
+  - _pokemon: {fileID: 11400000, guid: 5388265b7d06a87449c94851d54c2cba, type: 2}
